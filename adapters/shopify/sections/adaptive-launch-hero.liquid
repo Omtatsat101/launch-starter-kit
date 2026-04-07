@@ -1,0 +1,235 @@
+{% liquid
+  assign title = section.settings.title | default: 'Adaptive launch hero'
+  assign kicker = section.settings.kicker | default: 'Launch starter'
+  assign copy = section.settings.copy | default: 'Use this section to port a generated Organized launch concept into Shopify.'
+  assign primary_label = section.settings.primary_label | default: 'Shop now'
+  assign primary_link = section.settings.primary_link | default: routes.root_url
+  assign secondary_label = section.settings.secondary_label | default: 'View collections'
+  assign secondary_link = section.settings.secondary_link | default: routes.collections_url
+%}
+
+<section class="adaptive-launch-hero color-{{ section.settings.color_scheme }}">
+  <div class="adaptive-launch-hero__panel">
+    <p class="adaptive-launch-hero__kicker">{{ kicker }}</p>
+    <h2 class="adaptive-launch-hero__title">{{ title }}</h2>
+    <div class="adaptive-launch-hero__copy rte">{{ copy }}</div>
+
+    <div class="adaptive-launch-hero__actions">
+      <a class="adaptive-launch-hero__button adaptive-launch-hero__button--primary" href="{{ primary_link }}">
+        {{ primary_label }}
+      </a>
+      <a class="adaptive-launch-hero__button adaptive-launch-hero__button--secondary" href="{{ secondary_link }}">
+        {{ secondary_label }}
+      </a>
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="adaptive-launch-hero__metrics">
+        {% for block in section.blocks %}
+          <div class="adaptive-launch-hero__metric" {{ block.shopify_attributes }}>
+            <span>{{ block.settings.label }}</span>
+            <strong>{{ block.settings.value }}</strong>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .adaptive-launch-hero {
+    padding: 24px;
+  }
+
+  .adaptive-launch-hero__panel {
+    padding: 32px;
+    border-radius: 32px;
+    color: rgb(var(--color-foreground));
+    background: linear-gradient(135deg, rgba(224, 139, 79, 0.92), rgba(255, 244, 228, 0.96));
+  }
+
+  .adaptive-launch-hero__kicker {
+    margin: 0;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.74;
+  }
+
+  .adaptive-launch-hero__title {
+    margin: 16px 0 0;
+    max-width: 10ch;
+    font-size: clamp(3rem, 8vw, 5.75rem);
+    line-height: 0.92;
+    letter-spacing: -0.06em;
+  }
+
+  .adaptive-launch-hero__copy {
+    max-width: 56ch;
+    margin-top: 18px;
+    line-height: 1.65;
+  }
+
+  .adaptive-launch-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .adaptive-launch-hero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .adaptive-launch-hero__button--primary {
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+  }
+
+  .adaptive-launch-hero__button--secondary {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: inherit;
+  }
+
+  .adaptive-launch-hero__metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .adaptive-launch-hero__metric {
+    padding: 14px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.48);
+  }
+
+  .adaptive-launch-hero__metric span {
+    display: block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .adaptive-launch-hero__metric strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 1.35rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .adaptive-launch-hero {
+      padding: 12px;
+    }
+
+    .adaptive-launch-hero__panel {
+      padding: 22px;
+      border-radius: 24px;
+    }
+
+    .adaptive-launch-hero__metrics {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Adaptive launch hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Launch starter"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Adaptive launch hero"
+    },
+    {
+      "type": "richtext",
+      "id": "copy",
+      "label": "Copy",
+      "default": "<p>Use this section to turn a generated Organized launch concept into a polished storefront hero.</p>"
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary button label",
+      "default": "View collections"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "metric",
+      "name": "Metric",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Collections"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "12 live-ready"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Adaptive launch hero",
+      "blocks": [
+        {
+          "type": "metric"
+        },
+        {
+          "type": "metric",
+          "settings": {
+            "label": "Mode",
+            "value": "Shopify launch"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

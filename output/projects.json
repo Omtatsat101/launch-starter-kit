@@ -1,0 +1,1291 @@
+[
+  {
+    "id": "kiddiego",
+    "name": "KiddieGo",
+    "slug": "kiddiego",
+    "surface": "store",
+    "theme": "canyon",
+    "specialMode": "store",
+    "tagline": "Kids megastore with broad catalog, collection rails, and family-first trust.",
+    "headline": "The kids megastore shell that can launch fast and scale wide.",
+    "summary": "Starter commerce page for the KiddieGo 12-collection, 157-product direction documented in the local store specs.",
+    "metrics": [
+      [
+        "Collections",
+        "12 live-ready"
+      ],
+      [
+        "Catalog",
+        "157 products"
+      ],
+      [
+        "Mode",
+        "Shopify launch"
+      ]
+    ],
+    "features": [
+      "Campaign hero",
+      "Collection rail",
+      "Offer spotlight",
+      "Bundle wall"
+    ],
+    "actions": [
+      "Launch storefront",
+      "Load collections",
+      "Push promo campaign"
+    ],
+    "sources": [
+      "primer.md",
+      "projects/kiddiego/STORE-SPEC.md",
+      "projects/kiddiego/STORE-PAGES-CONTENT.md"
+    ]
+  },
+  {
+    "id": "gogomaya",
+    "name": "GoGoMaya AI Design Lab",
+    "slug": "gogomaya-ai-design-lab",
+    "surface": "website",
+    "theme": "forge",
+    "specialMode": "website",
+    "tagline": "AI-generated limited drops, countdown launches, and community-voted merch.",
+    "headline": "An AI design drop engine dressed like a premium outdoor lab.",
+    "summary": "Launch shell for GoGoMaya's AI Design Lab concept with limited releases and community-facing storytelling.",
+    "metrics": [
+      [
+        "Drop cadence",
+        "48hr windows"
+      ],
+      [
+        "Core loop",
+        "Vote -> drop -> countdown"
+      ],
+      [
+        "Positioning",
+        "Outdoor + AI"
+      ]
+    ],
+    "features": [
+      "Drop hero",
+      "Vote modules",
+      "Countdown launch strip",
+      "Creator story"
+    ],
+    "actions": [
+      "Start drop",
+      "Open voting",
+      "Publish design lab"
+    ],
+    "sources": [
+      "primer.md",
+      "projects/kiddiego/GOGOMAYA-AI-DESIGN-LAB.md",
+      "projects/kiddiego/GOGOMAYA-SPEC.md"
+    ]
+  },
+  {
+    "id": "kiddiesketch-hq",
+    "name": "KiddieSketch HQ",
+    "slug": "kiddiesketch-hq",
+    "surface": "local-app",
+    "theme": "paper",
+    "specialMode": "local-app",
+    "tagline": "Store operations cockpit for products, approvals, monitoring, and AI-assisted workflow.",
+    "headline": "A local operator shell for running the flagship store without chaos.",
+    "summary": "Internal dashboard starter for KiddieSketch operations, aligned to the 90/10 operating policy and approval model.",
+    "metrics": [
+      [
+        "Protection",
+        "Flagship safe"
+      ],
+      [
+        "Approval model",
+        "90/10"
+      ],
+      [
+        "Best use",
+        "Ops cockpit"
+      ]
+    ],
+    "features": [
+      "Approval queue",
+      "Product monitor",
+      "Digest center",
+      "Impact log"
+    ],
+    "actions": [
+      "Review approvals",
+      "Run monitor",
+      "Open daily digest"
+    ],
+    "sources": [
+      "projects/kiddiesketch/90-10-OPERATING-POLICY.md",
+      "projects/kiddiesketch/KIDDIE-BRANDS-HQ-V1.md",
+      "primer.md"
+    ]
+  },
+  {
+    "id": "riketpatel-portfolio",
+    "name": "RiketPatel Portfolio",
+    "slug": "riketpatel-portfolio",
+    "surface": "portfolio",
+    "theme": "paper",
+    "specialMode": "portfolio",
+    "tagline": "Founder portfolio and operating-system homepage for work, case studies, and active builds.",
+    "headline": "A personal brand site that reads like an operator's field manual.",
+    "summary": "Portfolio starter for the existing Next.js repo and the product portfolio material living in Organized.",
+    "metrics": [
+      [
+        "Mode",
+        "Founder portfolio"
+      ],
+      [
+        "Focus",
+        "Work + systems"
+      ],
+      [
+        "Stack",
+        "Next-ready"
+      ]
+    ],
+    "features": [
+      "Editorial hero",
+      "Selected work",
+      "Proof rail",
+      "Public profile CTA"
+    ],
+    "actions": [
+      "Open portfolio",
+      "Read case studies",
+      "Book intro call"
+    ],
+    "sources": [
+      "projects/git-repos/Riketpatel.com/package.json",
+      "5 - Personal Development/05 - Portfolio & Projects",
+      "primer.md"
+    ]
+  },
+  {
+    "id": "legacy-bridge",
+    "name": "Legacy Bridge Business Partners",
+    "slug": "legacy-bridge-business-partners",
+    "surface": "website",
+    "theme": "paper",
+    "specialMode": "website",
+    "tagline": "Brokerage capability site for deals, diligence, and advisory trust.",
+    "headline": "A brokerage launch site built for credibility before deal flow.",
+    "summary": "Starter website for Legacy Bridge tied to the existing Next.js repo and brokerage practice docs.",
+    "metrics": [
+      [
+        "Sector",
+        "Brokerage + CRE"
+      ],
+      [
+        "Stage",
+        "Capability building"
+      ],
+      [
+        "Best fit",
+        "Trust site"
+      ]
+    ],
+    "features": [
+      "Deal thesis hero",
+      "Services chapter",
+      "Diligence framework",
+      "Contact close"
+    ],
+    "actions": [
+      "View services",
+      "Review deal lens",
+      "Contact Legacy Bridge"
+    ],
+    "sources": [
+      "projects/brokerage/README.md",
+      "projects/git-repos/Legacy-Bridge-Business-Partners/package.json",
+      "primer.md"
+    ]
+  },
+  {
+    "id": "kiddiespeech",
+    "name": "KiddieSpeech",
+    "slug": "kiddiespeech",
+    "surface": "chatbot",
+    "theme": "signal",
+    "specialMode": "chatbot",
+    "tagline": "AI-powered conversational learning for kids with parent controls and privacy-first design.",
+    "headline": "A child-safe AI learning surface that parents can actually trust.",
+    "summary": "Launch starter built from the KiddieSpeech PRD and project overview with parent dashboard + child chat framing.",
+    "metrics": [
+      [
+        "Audience",
+        "Ages 3-10"
+      ],
+      [
+        "Revenue",
+        "$9.99 premium"
+      ],
+      [
+        "Core risk",
+        "Content safety"
+      ]
+    ],
+    "features": [
+      "Child chat shell",
+      "Parent controls",
+      "Safety fallback",
+      "Progress summaries"
+    ],
+    "actions": [
+      "Start child mode",
+      "Open parent dashboard",
+      "Review safety model"
+    ],
+    "sources": [
+      "docs/product/kiddiespeech-prd.md",
+      "Computer Platform Integration/08-projects/kiddiespeech/overview.md"
+    ]
+  },
+  {
+    "id": "kiddiewordle",
+    "name": "KiddieWordle",
+    "slug": "kiddiewordle",
+    "surface": "website",
+    "theme": "canyon",
+    "specialMode": "wordle",
+    "tagline": "A parent-configurable word game for kids with 1 to 13 letter words and multilingual support.",
+    "headline": "Wordle for kids, tuned by parents and ready for local language play.",
+    "summary": "Interactive starter concept for a kid-safe word game where parents choose word length and language for practice.",
+    "metrics": [
+      [
+        "Word range",
+        "1-13 letters"
+      ],
+      [
+        "Modes",
+        "English + local language"
+      ],
+      [
+        "Buyer",
+        "Parents"
+      ]
+    ],
+    "features": [
+      "Length selector",
+      "Language selector",
+      "Difficulty hints",
+      "Parent controls"
+    ],
+    "actions": [
+      "Play demo",
+      "Set word length",
+      "Choose language"
+    ],
+    "sources": [
+      "user request 2026-04-05",
+      "primer.md"
+    ]
+  },
+  {
+    "id": "translation-app",
+    "name": "Translation App",
+    "slug": "translation-app",
+    "surface": "local-app",
+    "theme": "signal",
+    "specialMode": "translator",
+    "tagline": "Fast local-friendly translation workspace for text, phrasebooks, and cross-language switching.",
+    "headline": "A translation workspace built like a tool, not a toy.",
+    "summary": "Starter UI for a multilingual translator app with source/target panes, language presets, and phrase memory.",
+    "metrics": [
+      [
+        "Best use",
+        "Local utility"
+      ],
+      [
+        "Mode",
+        "Text + phrasebook"
+      ],
+      [
+        "UI",
+        "Two-pane translator"
+      ]
+    ],
+    "features": [
+      "Source pane",
+      "Target pane",
+      "Language presets",
+      "Phrase history"
+    ],
+    "actions": [
+      "Translate text",
+      "Swap languages",
+      "Save phrasebook"
+    ],
+    "sources": [
+      "user request 2026-04-05",
+      "OMzero137_MASTER_IMPORT_GUIDE.md"
+    ]
+  },
+  {
+    "id": "windows-remote-controller",
+    "name": "Windows AI Remote Controller",
+    "slug": "windows-ai-remote-controller",
+    "surface": "desktop",
+    "theme": "forge",
+    "specialMode": "remote",
+    "tagline": "Desktop control panel for local AI tasks, system actions, queues, and device orchestration.",
+    "headline": "A remote-control shell for running AI and Windows tasks from one desk.",
+    "summary": "Desktop-style launch starter for a Windows AI controller with panes for commands, devices, and live system state.",
+    "metrics": [
+      [
+        "Mode",
+        "Desktop control"
+      ],
+      [
+        "Best fit",
+        "Electron / Tauri"
+      ],
+      [
+        "Loop",
+        "queue -> execute -> monitor"
+      ]
+    ],
+    "features": [
+      "Command deck",
+      "Device list",
+      "Job queue",
+      "Live telemetry"
+    ],
+    "actions": [
+      "Send command",
+      "Open queue",
+      "Inspect device"
+    ],
+    "sources": [
+      "user request 2026-04-05",
+      "primer.md"
+    ]
+  },
+  {
+    "id": "resume-agent",
+    "name": "Resume Agent SaaS",
+    "slug": "resume-agent-saas",
+    "surface": "chatbot",
+    "theme": "signal",
+    "specialMode": "resume-agent",
+    "tagline": "Automated pipeline for job search, resume optimization, tailored docs, and application tracking.",
+    "headline": "A resume agent launch shell built around the full automation pipeline.",
+    "summary": "Starter page for turning the resume-agent workflow into a SaaS offer with workflow visibility and subscription framing.",
+    "metrics": [
+      [
+        "Trigger",
+        "7:00 AM daily"
+      ],
+      [
+        "Top jobs",
+        "5 per run"
+      ],
+      [
+        "Core flow",
+        "search -> tailor -> share"
+      ]
+    ],
+    "features": [
+      "Pipeline timeline",
+      "Job scoring",
+      "Tailored resume links",
+      "Email summary"
+    ],
+    "actions": [
+      "View workflow",
+      "Start daily run",
+      "Open pricing"
+    ],
+    "sources": [
+      "docs/ideas/inbox.md",
+      "docs/ideas/prioritized.md",
+      "data-export/projects.json"
+    ]
+  },
+  {
+    "id": "multi-account-hub",
+    "name": "Multi-Account Hub",
+    "slug": "multi-account-hub",
+    "surface": "local-app",
+    "theme": "signal",
+    "specialMode": "local-app",
+    "tagline": "Unified inbox and cloud access across Gmail, Outlook, Yahoo, Zoho, iCloud, and IMAP.",
+    "headline": "A multi-account control center that feels built for operators.",
+    "summary": "Launch starter for the plugin already present in Organized, positioned as a local-first communications utility.",
+    "metrics": [
+      [
+        "Capacity",
+        "20 accounts"
+      ],
+      [
+        "Scope",
+        "Email + Drive"
+      ],
+      [
+        "Privacy",
+        "local credentials"
+      ]
+    ],
+    "features": [
+      "Cross-inbox search",
+      "Provider setup",
+      "Unified drafts",
+      "Drive search"
+    ],
+    "actions": [
+      "Add account",
+      "Search inboxes",
+      "Open provider guide"
+    ],
+    "sources": [
+      "plugins/multi-account-hub/README.md",
+      "primer.md"
+    ]
+  },
+  {
+    "id": "local-assist",
+    "name": "Local Assist Workbench",
+    "slug": "local-assist-workbench",
+    "surface": "desktop",
+    "theme": "forge",
+    "specialMode": "chatbot",
+    "tagline": "Local coordination shell for Codex, Claude, context bundles, and handoff workflows.",
+    "headline": "A workbench for local AI execution, review, and bridge flows.",
+    "summary": "Desktop starter for the local-assist bridge system already living in the workspace.",
+    "metrics": [
+      [
+        "Mode",
+        "Local-first"
+      ],
+      [
+        "Bridge",
+        "Claude + Codex"
+      ],
+      [
+        "Scope",
+        "Context + handoffs"
+      ]
+    ],
+    "features": [
+      "Context bundle rail",
+      "Bridge status",
+      "Prompt launcher",
+      "Review queue"
+    ],
+    "actions": [
+      "Open context",
+      "Launch Codex",
+      "Launch Claude"
+    ],
+    "sources": [
+      "projects/local-assist-bridge/README.md",
+      "projects/local-assist-bridge/LOCAL-ASSISTANT.md"
+    ]
+  },
+  {
+    "id": "digital-deals",
+    "name": "Digital Deals",
+    "slug": "digital-deals",
+    "surface": "website",
+    "theme": "signal",
+    "specialMode": "website",
+    "tagline": "Offer and analytics shell for deal products, campaign pages, and smart sales surfaces.",
+    "headline": "A sharp deal-surface starter for productized offers and analytics-led sales pages.",
+    "summary": "Starter website for the Digital Deals app traces found in Organized.",
+    "metrics": [
+      [
+        "Use case",
+        "Offer pages"
+      ],
+      [
+        "Tone",
+        "Signal-first"
+      ],
+      [
+        "Fit",
+        "Growth tooling"
+      ]
+    ],
+    "features": [
+      "Offer hero",
+      "Metrics strip",
+      "Use-case blocks",
+      "Action footer"
+    ],
+    "actions": [
+      "Open offer",
+      "Review metrics",
+      "Contact sales"
+    ],
+    "sources": [
+      "data-export/projects.json",
+      "Business Documents/DigitalDeals/app/src/App.jsx"
+    ]
+  },
+  {
+    "id": "ai-website-cloner",
+    "name": "AI Website Cloner",
+    "slug": "ai-website-cloner",
+    "surface": "website",
+    "theme": "forge",
+    "specialMode": "website",
+    "tagline": "Clone design patterns, then restyle them into launch-ready branded surfaces.",
+    "headline": "A cloning tool deserves a site that proves it can restyle on command.",
+    "summary": "Starter website for the AI Website Cloner project, framed as a design replication and adaptation engine.",
+    "metrics": [
+      [
+        "Mode",
+        "Design clone + restyle"
+      ],
+      [
+        "Use case",
+        "Fast prototyping"
+      ],
+      [
+        "Audience",
+        "Operators + builders"
+      ]
+    ],
+    "features": [
+      "Clone showcase",
+      "Restyle flow",
+      "Output examples",
+      "Launch CTA"
+    ],
+    "actions": [
+      "See flow",
+      "View output",
+      "Start clone session"
+    ],
+    "sources": [
+      "projects/ai-website-cloner",
+      "projects/CLONED-REPOS-INDEX.md"
+    ]
+  },
+  {
+    "id": "earthmaya",
+    "name": "Earth Maya",
+    "slug": "earthmaya",
+    "surface": "website",
+    "theme": "sage",
+    "specialMode": "waitlist",
+    "isDomainShell": true,
+    "domain": "earthmaya.com",
+    "tagline": "Rooted wellness for the modern family.",
+    "headline": "Nature-first wellness, passed down and built forward.",
+    "summary": "Natural family wellness grounded in Ayurvedic tradition. Herbal products, seasonal rituals, and earth-based remedies for families who want to heal with intention.",
+    "offerCopy": "Wellness that honors ancient wisdom and serves the modern family — from herbal kits to seasonal guides.",
+    "metrics": [
+      [
+        "Audience",
+        "Families"
+      ],
+      [
+        "Tradition",
+        "Ayurvedic"
+      ],
+      [
+        "Status",
+        "Coming 2026"
+      ]
+    ],
+    "features": [
+      [
+        "Herbal Remedies",
+        "Time-tested plant-based formulations for everyday family wellness."
+      ],
+      [
+        "Family Wellness Kits",
+        "Curated bundles for immunity, sleep, digestion, and seasonal transitions."
+      ],
+      [
+        "Ayurvedic Guides",
+        "Practical guides that translate ancient practices into modern routines."
+      ],
+      [
+        "Seasonal Rituals",
+        "Quarterly wellness rhythms aligned to nature's cycles."
+      ]
+    ],
+    "actions": [
+      [
+        "Product Line",
+        "Launching with core herbal formulations and family wellness kits."
+      ],
+      [
+        "Content Hub",
+        "Guides, recipes, and rituals for conscious family living."
+      ],
+      [
+        "Community",
+        "A space for parents exploring natural wellness together."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "Natural Wellness",
+      "Coming Soon"
+    ],
+    "formAction": "#",
+    "waitlistFeatures": [
+      [
+        "Earth-Based",
+        "Every product starts with what the earth already provides."
+      ],
+      [
+        "Family-First",
+        "Safe, gentle, and designed for the whole household."
+      ]
+    ],
+    "brandVision": "Earth Maya bridges ancient Ayurvedic wellness with modern family life — gentle, intentional, and rooted in the earth.",
+    "contactEmail": "hello@hariomtatsat.com"
+  },
+  {
+    "id": "vibeflippers",
+    "name": "VibeFlippers",
+    "slug": "vibeflippers",
+    "surface": "website",
+    "theme": "neon",
+    "specialMode": "waitlist",
+    "isDomainShell": true,
+    "domain": "vibeflippers.com",
+    "tagline": "AI-built digital assets, flipped for profit.",
+    "headline": "The marketplace where AI meets acquisition.",
+    "summary": "A newsletter and marketplace for AI-generated digital assets — sites, tools, templates, and micro-SaaS. Find deals, get valuations, and flip with confidence.",
+    "offerCopy": "Weekly deal alerts, AI-powered valuations, and a growing community of builders who buy and sell digital assets.",
+    "metrics": [
+      [
+        "Focus",
+        "AI Assets"
+      ],
+      [
+        "Model",
+        "Marketplace"
+      ],
+      [
+        "Stage",
+        "Newsletter"
+      ]
+    ],
+    "features": [
+      [
+        "Deal Alerts",
+        "Curated AI-built assets hitting the market each week."
+      ],
+      [
+        "AI Valuations",
+        "Data-driven pricing for digital assets built with AI tools."
+      ],
+      [
+        "Market Analysis",
+        "Trends, comps, and signals from the AI asset economy."
+      ],
+      [
+        "Buyer Community",
+        "Connect with serious buyers and sellers of digital properties."
+      ]
+    ],
+    "actions": [
+      [
+        "Newsletter Launch",
+        "Weekly digest of deals, trends, and flip opportunities."
+      ],
+      [
+        "Marketplace Beta",
+        "List and discover AI-built assets for acquisition."
+      ],
+      [
+        "Valuation Tool",
+        "Get an instant estimate on any AI-built digital asset."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "Digital Assets",
+      "Newsletter"
+    ],
+    "formAction": "#",
+    "waitlistFeatures": [
+      [
+        "For Builders",
+        "Made by and for people who build with AI tools."
+      ],
+      [
+        "Deal Flow",
+        "New listings, market signals, and flip opportunities weekly."
+      ]
+    ],
+    "contactEmail": "hello@hariomtatsat.com"
+  },
+  {
+    "id": "flipwala",
+    "name": "FlipWala",
+    "slug": "flipwala",
+    "surface": "website",
+    "theme": "forge",
+    "specialMode": "whatsapp",
+    "isDomainShell": true,
+    "domain": "flipwala.com",
+    "tagline": "The digital asset broker for South Asia and beyond.",
+    "headline": "Buy, sell, and flip digital businesses with confidence.",
+    "summary": "Empire Flippers-style brokerage for the South Asian diaspora and first-time digital asset buyers. Deal sourcing, due diligence, and buyer matching — powered by AI.",
+    "offerCopy": "End-to-end brokerage for digital businesses — from discovery to deal close, built for the South Asian market.",
+    "metrics": [
+      [
+        "Model",
+        "Brokerage"
+      ],
+      [
+        "Focus",
+        "Digital Businesses"
+      ],
+      [
+        "Market",
+        "South Asia+"
+      ]
+    ],
+    "features": [
+      [
+        "Deal Sourcing",
+        "Curated digital businesses and assets vetted for quality and potential."
+      ],
+      [
+        "AI Valuations",
+        "Fair market pricing backed by revenue data and AI analysis."
+      ],
+      [
+        "Due Diligence",
+        "Full verification of traffic, revenue, and technical health."
+      ],
+      [
+        "Buyer Matching",
+        "Connect the right buyer to the right business, faster."
+      ]
+    ],
+    "actions": [
+      [
+        "WhatsApp Community",
+        "Join the conversation where deals happen first."
+      ],
+      [
+        "Weekly Listings",
+        "Fresh digital business listings delivered to your inbox."
+      ],
+      [
+        "Sell Your Asset",
+        "List your digital business with our brokerage team."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "Brokerage",
+      "South Asia"
+    ],
+    "formAction": "#",
+    "whatsappNumber": "1234567890",
+    "whatsappMessage": "Hi! I'm interested in FlipWala — digital asset brokerage.",
+    "communityPitch": "Join our WhatsApp community of digital business buyers and sellers across South Asia and the diaspora.",
+    "contactEmail": "hello@hariomtatsat.com"
+  },
+  {
+    "id": "kidztoystore",
+    "name": "Kidz Toy Store",
+    "slug": "kidztoystore",
+    "surface": "store",
+    "theme": "play",
+    "specialMode": "store",
+    "isDomainShell": true,
+    "domain": "kidztoystore.com",
+    "tagline": "Curated toys for curious kids.",
+    "headline": "Every toy, handpicked for play and growth.",
+    "summary": "A curated toy marketplace where every product is chosen for quality, safety, and the kind of play that helps kids grow. Part of the KiddieSketch / Maya experience ecosystem.",
+    "offerCopy": "Toys that spark curiosity, creativity, and movement — handpicked by parents, for parents.",
+    "metrics": [
+      [
+        "Catalog",
+        "Curated"
+      ],
+      [
+        "Ages",
+        "0–12"
+      ],
+      [
+        "Focus",
+        "Play + Growth"
+      ]
+    ],
+    "features": [
+      [
+        "Creative Play",
+        "Art kits, building sets, and tools that turn imagination into creation."
+      ],
+      [
+        "Active Play",
+        "Movement toys, outdoor games, and adventure gear for active kids."
+      ],
+      [
+        "Learning Toys",
+        "STEM, language, and developmental toys that teach through play."
+      ],
+      [
+        "Gift Collections",
+        "Ready-to-gift bundles curated by age and interest."
+      ]
+    ],
+    "actions": [
+      [
+        "Shop Now",
+        "Browse the full curated collection at KiddieGo."
+      ],
+      [
+        "Gift Finder",
+        "Find the perfect toy by age, interest, or occasion."
+      ],
+      [
+        "New Arrivals",
+        "Fresh picks added weekly from trusted brands."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "Toy Store",
+      "Ages 0–12"
+    ],
+    "contactEmail": "hello@hariomtatsat.com"
+  },
+  {
+    "id": "gogoflag",
+    "name": "GoGoFlag",
+    "slug": "gogoflag",
+    "surface": "website",
+    "theme": "play",
+    "specialMode": "waitlist",
+    "isDomainShell": true,
+    "domain": "gogoflag.com",
+    "tagline": "Movement games that get kids going.",
+    "headline": "Play outside. Move together. Go!",
+    "summary": "Physical movement games for kids — flag football, adventure challenges, and outdoor play powered by the GoGoMaya universe. Where kid-made sketches become real-world game pieces.",
+    "offerCopy": "Games that get kids moving, creating, and playing together — connected to the Maya Meta Experience.",
+    "metrics": [
+      [
+        "Universe",
+        "GoGoMaya"
+      ],
+      [
+        "Focus",
+        "Movement + Play"
+      ],
+      [
+        "Status",
+        "Coming Soon"
+      ]
+    ],
+    "features": [
+      [
+        "Flag Games",
+        "Kid-friendly flag football and capture-the-flag with a creative twist."
+      ],
+      [
+        "Adventure Challenges",
+        "Outdoor missions where sketches become game assets in the real world."
+      ],
+      [
+        "Movement Programs",
+        "Structured play sessions for schools, camps, and family groups."
+      ],
+      [
+        "Maya Integration",
+        "Kid drawings become flags, characters, and collectible game pieces."
+      ]
+    ],
+    "actions": [
+      [
+        "Movement Games",
+        "Structured outdoor play programs launching soon."
+      ],
+      [
+        "Maya Universe",
+        "Connected to the KiddieSketch / Maya Meta Experience ecosystem."
+      ],
+      [
+        "Creator Program",
+        "Kids design the flags and game pieces that power GoGoFlag."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "Movement Games",
+      "GoGoMaya"
+    ],
+    "formAction": "#",
+    "waitlistFeatures": [
+      [
+        "Sketch-to-Play",
+        "Kids draw it, then play with it — digital to physical."
+      ],
+      [
+        "Maya Universe",
+        "Part of the meta experience where one drawing lives across every surface."
+      ]
+    ],
+    "contactEmail": "hello@hariomtatsat.com"
+  },
+  {
+    "id": "omvedics",
+    "name": "Om Vedics",
+    "slug": "omvedics",
+    "surface": "website",
+    "theme": "vedic",
+    "specialMode": "resell",
+    "isDomainShell": true,
+    "domain": "omvedics.com",
+    "tagline": "Ancient wisdom, modern wellness.",
+    "headline": "Vedic wellness for conscious living.",
+    "summary": "Authentic Vedic wellness products and knowledge for people who seek balance through tradition. Rooted in the timeless practices of Ayurveda, yoga, and meditation.",
+    "offerCopy": "A wellness brand built on Vedic principles — serving those who seek harmony between body, mind, and spirit.",
+    "metrics": [
+      [
+        "Tradition",
+        "Vedic"
+      ],
+      [
+        "Focus",
+        "Wellness"
+      ],
+      [
+        "Approach",
+        "Authentic"
+      ]
+    ],
+    "features": [
+      [
+        "Ayurvedic Products",
+        "Formulations rooted in thousands of years of Vedic medicine."
+      ],
+      [
+        "Meditation Tools",
+        "Guided practices, malas, and ritual objects for daily sadhana."
+      ],
+      [
+        "Wellness Guides",
+        "Practical wisdom for incorporating Vedic principles into modern life."
+      ],
+      [
+        "Seasonal Programs",
+        "Cyclical wellness aligned to Vedic calendars and natural rhythms."
+      ]
+    ],
+    "actions": [
+      [
+        "Product Collection",
+        "Curated Vedic wellness essentials launching soon."
+      ],
+      [
+        "Knowledge Library",
+        "Articles, guides, and teachings from the Vedic tradition."
+      ],
+      [
+        "Practitioner Network",
+        "Connect with verified Ayurvedic and Vedic wellness practitioners."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "Vedic Wellness",
+      "Authentic"
+    ],
+    "brandVision": "Om Vedics brings the depth of Vedic wellness tradition into accessible, modern products and practices — honoring the source while serving today's seekers.",
+    "contactEmail": "hello@hariomtatsat.com"
+  },
+  {
+    "id": "the-aum",
+    "name": "The Aum",
+    "slug": "the-aum",
+    "surface": "website",
+    "theme": "vedic",
+    "specialMode": "resell",
+    "isDomainShell": true,
+    "domain": "the-aum.com",
+    "tagline": "The sound of wholeness.",
+    "headline": "One sound. Infinite wellness.",
+    "summary": "Spiritual wellness rooted in the primordial syllable. The Aum is a brand for those who seek wholeness through sound, breath, and presence.",
+    "offerCopy": "A spiritual wellness brand centered on the vibration that connects all things — sound healing, breathwork, and meditative practice.",
+    "metrics": [
+      [
+        "Core",
+        "Sound + Breath"
+      ],
+      [
+        "Practice",
+        "Meditation"
+      ],
+      [
+        "Spirit",
+        "Universal"
+      ]
+    ],
+    "features": [
+      [
+        "Sound Healing",
+        "Singing bowls, tuning forks, and frequency-based wellness tools."
+      ],
+      [
+        "Breathwork",
+        "Guided pranayama and breathing practices for daily wellness."
+      ],
+      [
+        "Meditation",
+        "Curated meditation experiences rooted in the Aum vibration."
+      ],
+      [
+        "Ritual Objects",
+        "Handcrafted tools for personal spiritual practice."
+      ]
+    ],
+    "actions": [
+      [
+        "Sound Collection",
+        "Healing instruments and frequency tools launching soon."
+      ],
+      [
+        "Practice Library",
+        "Guided sessions for breathwork, meditation, and sound healing."
+      ],
+      [
+        "Retreat Events",
+        "Immersive experiences centered on the Aum vibration."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "Spiritual Wellness",
+      "Sound"
+    ],
+    "brandVision": "The Aum captures the universal vibration at the heart of all spiritual practice — a brand for seekers who find wellness through sound, breath, and stillness.",
+    "contactEmail": "hello@hariomtatsat.com"
+  },
+  {
+    "id": "thevedicjeweler",
+    "name": "The Vedic Jeweler",
+    "slug": "thevedicjeweler",
+    "surface": "website",
+    "theme": "ruby",
+    "specialMode": "resell",
+    "isDomainShell": true,
+    "domain": "thevedicjeweler.com",
+    "tagline": "Sacred geometry, worn with intention.",
+    "headline": "Jewelry that carries meaning.",
+    "summary": "Artisan sacred jewelry inspired by Vedic geometry, planetary alignment, and spiritual intention. Every piece is designed to be worn as a daily practice.",
+    "offerCopy": "Handcrafted jewelry that channels Vedic symbolism — yantras, planetary stones, and sacred geometry you carry with you.",
+    "metrics": [
+      [
+        "Craft",
+        "Artisan"
+      ],
+      [
+        "Tradition",
+        "Vedic"
+      ],
+      [
+        "Intent",
+        "Sacred"
+      ]
+    ],
+    "features": [
+      [
+        "Yantra Jewelry",
+        "Geometric pendants and rings based on sacred Vedic yantras."
+      ],
+      [
+        "Planetary Stones",
+        "Gemstone pieces aligned to Vedic astrology and planetary energy."
+      ],
+      [
+        "Mala Collections",
+        "Prayer beads and meditation malas in traditional and modern styles."
+      ],
+      [
+        "Custom Sacred Pieces",
+        "Commission jewelry designed around your personal mantra or intention."
+      ]
+    ],
+    "actions": [
+      [
+        "Collection Preview",
+        "First sacred geometry collection coming soon."
+      ],
+      [
+        "Custom Orders",
+        "Work with our artisans on a piece made for your practice."
+      ],
+      [
+        "Vedic Guide",
+        "Learn the meaning behind each symbol and stone."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "Sacred Jewelry",
+      "Artisan"
+    ],
+    "brandVision": "The Vedic Jeweler creates wearable sacred art — jewelry rooted in Vedic tradition, designed for people who want their accessories to carry spiritual weight.",
+    "contactEmail": "hello@hariomtatsat.com"
+  },
+  {
+    "id": "hariomtatsatjewelry",
+    "name": "Hari Om Tatsat Jewelry",
+    "slug": "hariomtatsatjewelry",
+    "surface": "website",
+    "theme": "ruby",
+    "specialMode": "resell",
+    "isDomainShell": true,
+    "domain": "hariomtatsatjewelry.com",
+    "tagline": "Truth adorned. Divinity crafted.",
+    "headline": "Where devotion meets design.",
+    "summary": "Premium devotional jewelry rooted in the sacred mantra Hari Om Tat Sat — truth, divinity, and beauty expressed through precious metals and sacred stones.",
+    "offerCopy": "Jewelry that embodies the mantra Hari Om Tat Sat — each piece a meditation in form, a devotion you wear.",
+    "metrics": [
+      [
+        "Mantra",
+        "Hari Om Tat Sat"
+      ],
+      [
+        "Craft",
+        "Premium"
+      ],
+      [
+        "Spirit",
+        "Devotional"
+      ]
+    ],
+    "features": [
+      [
+        "Devotional Collections",
+        "Pieces inspired by the Hari Om Tat Sat mantra and its teachings."
+      ],
+      [
+        "Sacred Metals",
+        "Gold, silver, and copper work infused with intention and craft."
+      ],
+      [
+        "Mantra Engravings",
+        "Custom Sanskrit engravings on rings, pendants, and bracelets."
+      ],
+      [
+        "Temple-Inspired",
+        "Designs drawn from Hindu temple architecture and sacred art."
+      ]
+    ],
+    "actions": [
+      [
+        "First Collection",
+        "Inaugural devotional jewelry line in development."
+      ],
+      [
+        "Custom Mantra Pieces",
+        "Commission engraved jewelry with your personal mantra."
+      ],
+      [
+        "Sacred Craft",
+        "Learn about the artisan traditions behind each piece."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "Devotional",
+      "Premium"
+    ],
+    "brandVision": "Hari Om Tatsat Jewelry is where the mantra becomes material — premium devotional jewelry for those who wear their faith with intention.",
+    "contactEmail": "hello@hariomtatsat.com"
+  },
+  {
+    "id": "mindvibecodes",
+    "name": "MindVibeCodes",
+    "slug": "mindvibecodes",
+    "surface": "website",
+    "theme": "neon",
+    "specialMode": "resell",
+    "isDomainShell": true,
+    "domain": "mindvibecodes.com",
+    "tagline": "AI-powered tools for the vibe coder generation.",
+    "headline": "Build with vibes. Ship with code.",
+    "summary": "Resources, templates, and tools for AI-assisted development. A hub for the new generation of builders who use AI to code, design, and ship faster than ever.",
+    "offerCopy": "The toolkit for developers who build with AI — prompts, templates, starter kits, and workflow automations.",
+    "metrics": [
+      [
+        "Audience",
+        "AI Builders"
+      ],
+      [
+        "Content",
+        "Tools + Resources"
+      ],
+      [
+        "Vibe",
+        "Ship Fast"
+      ]
+    ],
+    "features": [
+      [
+        "Prompt Library",
+        "Battle-tested prompts for coding, debugging, and architecture with AI."
+      ],
+      [
+        "Starter Kits",
+        "Pre-built project templates optimized for AI-assisted workflows."
+      ],
+      [
+        "Workflow Tools",
+        "Automations and scripts that multiply your AI coding output."
+      ],
+      [
+        "Builder Community",
+        "Connect with developers who ship fast using AI tools."
+      ]
+    ],
+    "actions": [
+      [
+        "Resource Hub",
+        "Curated AI development resources launching soon."
+      ],
+      [
+        "Newsletter",
+        "Weekly tips, tools, and workflows for vibe coders."
+      ],
+      [
+        "Open Source",
+        "Free tools and templates for the community."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "AI Tools",
+      "Dev Resources"
+    ],
+    "brandVision": "MindVibeCodes is the resource hub for developers who build with AI — where vibe coding meets professional craft and shipping culture.",
+    "contactEmail": "hello@hariomtatsat.com"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "name": "launch-starter-kit",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Production-leaning launch page generator for Organized projects.",
+  "scripts": {
+    "generate": "node ./scripts/generate.mjs"
+  }
+}

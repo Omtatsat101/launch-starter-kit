@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlipWala</title>
+  <meta name="description" content="Empire Flippers-style brokerage for the South Asian diaspora and first-time digital asset buyers. Deal sourcing, due diligence, and buyer matching — powered by AI.">
+  <style>:root {
+  --bg: #efe6da;
+  --panel: rgba(255, 250, 244, 0.86);
+  --ink: #181413;
+  --muted: #6d635c;
+  --line: rgba(55, 34, 18, 0.12);
+  --accent: #bb6127;
+  --hero: linear-gradient(135deg, #ca7231 0%, #efbc82 48%, #f7e9d0 100%);
+  --shadow: 0 24px 70px rgba(34, 22, 10, 0.14);
+  --radius-xl: 34px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-pill: 999px;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.58), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(255,255,255,0.34), transparent 18%),
+    linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 90%, white 10%) 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+body {
+  padding: 20px;
+}
+
+.frame {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 42px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,0.3);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--hero);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.brand-copy strong,
+.hero-title,
+.card-title,
+.section-title {
+  font-family: var(--font-display);
+}
+
+.brand-copy strong {
+  display: block;
+  font-size: 23px;
+  letter-spacing: -0.04em;
+}
+
+.brand-copy span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.topbar-badges,
+.pill-row,
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill,
+.badge,
+.stat-label {
+  font: 700 11px/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge,
+.pill {
+  padding: 9px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.56);
+  color: var(--muted);
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 1.3fr 0.92fr;
+  gap: 22px;
+  padding: 24px;
+}
+
+.hero {
+  min-height: 360px;
+  border-radius: 30px;
+  background: var(--hero);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: -70px;
+  top: -50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.52), transparent 66%);
+}
+
+.hero-kicker {
+  margin: 0 0 12px;
+  position: relative;
+  z-index: 1;
+  font: 700 12px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.74;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(42px, 5.6vw, 82px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.58;
+  opacity: 0.88;
+}
+
+.stat-card {
+  min-width: 140px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.4);
+  border: 1px solid rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 1;
+}
+
+.stat-label {
+  display: block;
+  opacity: 0.66;
+}
+
+.stat-value {
+  display: block;
+  margin-top: 8px;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.stack {
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.54);
+  padding: 22px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 28px;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.card-copy,
+.feature-item span,
+.action-item span,
+.footer-note {
+  color: var(--muted);
+}
+
+.card-copy {
+  margin-top: 10px;
+  line-height: 1.55;
+}
+
+.feature-list,
+.action-list,
+.custom-area {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.feature-item,
+.action-item,
+.custom-box {
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.58);
+  padding: 16px;
+}
+
+.feature-item strong,
+.action-item strong,
+.custom-box strong {
+  display: block;
+  font-size: 16px;
+}
+
+.feature-item span,
+.action-item span,
+.custom-box span {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.custom-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.custom-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.selector-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.selector-pill {
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.72);
+  font: 700 11px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 18px 24px 24px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-note {
+  font: 700 12px/1.45 var(--font-mono);
+}
+
+.gallery {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+}
+
+.gallery-header {
+  margin-bottom: 24px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gallery-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.gallery-card:hover {
+  transform: translateY(-2px);
+}
+
+.gallery-card h2 {
+  margin: 12px 0 0;
+  font: 700 30px/0.96 var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+.gallery-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 980px) {
+  .shell,
+  .custom-grid.two,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    padding: 12px;
+  }
+
+  .frame {
+    border-radius: 26px;
+  }
+}
+</style>
+</head>
+<body>
+  <main class="frame" style="--bg:#171a1d;--panel:rgba(29, 34, 39, 0.9);--ink:#f3ede6;--muted:#b7b1a9;--line:rgba(255, 255, 255, 0.08);--accent:#e38540;--hero:linear-gradient(135deg, #2c3138 0%, #454d55 30%, #e08b4f 100%);--shadow:0 28px 90px rgba(0, 0, 0, 0.34);">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-copy">
+          <strong>FlipWala</strong>
+          <span>The digital asset broker for South Asia and beyond.</span>
+        </div>
+      </div>
+      <div class="topbar-badges">
+        <span class="badge">Brokerage</span><span class="badge">South Asia</span>
+      </div>
+    </header>
+    <section class="shell">
+      <section class="hero">
+        <div>
+          <p class="hero-kicker">flipwala.com</p>
+          <h1 class="hero-title">Buy, sell, and flip digital businesses with confidence.</h1>
+          <p class="hero-copy">Empire Flippers-style brokerage for the South Asian diaspora and first-time digital asset buyers. Deal sourcing, due diligence, and buyer matching — powered by AI.</p>
+        </div>
+        <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-label">Model</span>
+        <strong class="stat-value">Brokerage</strong>
+      </div>
+    
+      <div class="stat-card">
+        <span class="stat-label">Focus</span>
+        <strong class="stat-value">Digital Businesses</strong>
+      </div>
+    
+      <div class="stat-card">
+        <span class="stat-label">Market</span>
+        <strong class="stat-value">South Asia+</strong>
+      </div>
+    </div>
+      </section>
+      <section class="stack">
+        <article class="card">
+          <h2 class="section-title">What We Offer</h2>
+          <p class="card-copy">End-to-end brokerage for digital businesses — from discovery to deal close, built for the South Asian market.</p>
+          <div class="feature-list">
+      <article class="feature-item">
+        <strong>Deal Sourcing</strong>
+        <span>Curated digital businesses and assets vetted for quality and potential.</span>
+      </article>
+    
+      <article class="feature-item">
+        <strong>AI Valuations</strong>
+        <span>Fair market pricing backed by revenue data and AI analysis.</span>
+      </article>
+    
+      <article class="feature-item">
+        <strong>Due Diligence</strong>
+        <span>Full verification of traffic, revenue, and technical health.</span>
+      </article>
+    
+      <article class="feature-item">
+        <strong>Buyer Matching</strong>
+        <span>Connect the right buyer to the right business, faster.</span>
+      </article>
+    </div>
+        </article>
+        <article class="card">
+          <h2 class="section-title">Coming Soon</h2>
+          <p class="card-copy">We're building something worth waiting for.</p>
+          <div class="action-list">
+      <article class="action-item">
+        <strong>WhatsApp Community</strong>
+        <span>Join the conversation where deals happen first.</span>
+      </article>
+    
+      <article class="action-item">
+        <strong>Weekly Listings</strong>
+        <span>Fresh digital business listings delivered to your inbox.</span>
+      </article>
+    
+      <article class="action-item">
+        <strong>Sell Your Asset</strong>
+        <span>List your digital business with our brokerage team.</span>
+      </article>
+    </div>
+        </article>
+      </section>
+    </section>
+    <section class="shell" style="padding-top:0">
+      <section class="card">
+        <h2 class="section-title">Get Started</h2>
+        <p class="card-copy">The digital asset broker for South Asia and beyond.</p>
+        
+        <div class="custom-area">
+          <article class="custom-box">
+            <strong>Join the Community</strong>
+            <span>Join our WhatsApp community of digital business buyers and sellers across South Asia and the diaspora.</span>
+            <a href="https://wa.me/1234567890?text=Hi!%20I'm%20interested%20in%20FlipWala%20%E2%80%94%20digital%20asset%20brokerage." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:12px 24px;border-radius:999px;background:#25D366;color:#fff;font:700 13px/1 var(--font-mono);letter-spacing:0.08em;text-transform:uppercase;text-decoration:none">&#9742; Join on WhatsApp</a>
+          </article>
+          <article class="custom-box">
+            <strong>Stay Updated</strong>
+            <span>Get deal alerts and market insights delivered to your inbox.</span>
+            <form action="#" method="POST" style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+              <input type="email" name="email" placeholder="your@email.com" required style="flex:1;min-width:200px;padding:12px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,0.78);font:600 15px/1 var(--font-body);color:var(--ink);outline:none">
+              <button type="submit" style="padding:12px 24px;border-radius:999px;border:none;background:var(--accent);color:#fff;font:700 13px/1 var(--font-mono);letter-spacing:0.08em;text-transform:uppercase;cursor:pointer">Subscribe</button>
+            </form>
+          </article>
+        </div>
+      
+      </section>
+      
+    </section>
+    <footer class="footer">
+      <span class="footer-note">© 2026 FlipWala</span>
+      <span class="footer-note">flipwala.com</span>
+    </footer>
+  </main>
+</body>
+</html>

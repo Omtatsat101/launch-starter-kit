@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KiddieGo Starter</title>
+  <meta name="description" content="Starter commerce page for the KiddieGo 12-collection, 157-product direction documented in the local store specs.">
+  <style>:root {
+  --bg: #efe6da;
+  --panel: rgba(255, 250, 244, 0.86);
+  --ink: #181413;
+  --muted: #6d635c;
+  --line: rgba(55, 34, 18, 0.12);
+  --accent: #bb6127;
+  --hero: linear-gradient(135deg, #ca7231 0%, #efbc82 48%, #f7e9d0 100%);
+  --shadow: 0 24px 70px rgba(34, 22, 10, 0.14);
+  --radius-xl: 34px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-pill: 999px;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.58), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(255,255,255,0.34), transparent 18%),
+    linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 90%, white 10%) 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+body {
+  padding: 20px;
+}
+
+.frame {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 42px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,0.3);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--hero);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.brand-copy strong,
+.hero-title,
+.card-title,
+.section-title {
+  font-family: var(--font-display);
+}
+
+.brand-copy strong {
+  display: block;
+  font-size: 23px;
+  letter-spacing: -0.04em;
+}
+
+.brand-copy span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.topbar-badges,
+.pill-row,
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill,
+.badge,
+.stat-label {
+  font: 700 11px/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge,
+.pill {
+  padding: 9px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.56);
+  color: var(--muted);
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 1.3fr 0.92fr;
+  gap: 22px;
+  padding: 24px;
+}
+
+.hero {
+  min-height: 360px;
+  border-radius: 30px;
+  background: var(--hero);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: -70px;
+  top: -50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.52), transparent 66%);
+}
+
+.hero-kicker {
+  margin: 0 0 12px;
+  position: relative;
+  z-index: 1;
+  font: 700 12px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.74;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(42px, 5.6vw, 82px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.58;
+  opacity: 0.88;
+}
+
+.stat-card {
+  min-width: 140px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.4);
+  border: 1px solid rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 1;
+}
+
+.stat-label {
+  display: block;
+  opacity: 0.66;
+}
+
+.stat-value {
+  display: block;
+  margin-top: 8px;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.stack {
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.54);
+  padding: 22px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 28px;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.card-copy,
+.feature-item span,
+.action-item span,
+.footer-note {
+  color: var(--muted);
+}
+
+.card-copy {
+  margin-top: 10px;
+  line-height: 1.55;
+}
+
+.feature-list,
+.action-list,
+.custom-area {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.feature-item,
+.action-item,
+.custom-box {
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.58);
+  padding: 16px;
+}
+
+.feature-item strong,
+.action-item strong,
+.custom-box strong {
+  display: block;
+  font-size: 16px;
+}
+
+.feature-item span,
+.action-item span,
+.custom-box span {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.custom-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.custom-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.selector-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.selector-pill {
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.72);
+  font: 700 11px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 18px 24px 24px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-note {
+  font: 700 12px/1.45 var(--font-mono);
+}
+
+.gallery {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+}
+
+.gallery-header {
+  margin-bottom: 24px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gallery-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.gallery-card:hover {
+  transform: translateY(-2px);
+}
+
+.gallery-card h2 {
+  margin: 12px 0 0;
+  font: 700 30px/0.96 var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+.gallery-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 980px) {
+  .shell,
+  .custom-grid.two,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    padding: 12px;
+  }
+
+  .frame {
+    border-radius: 26px;
+  }
+}
+</style>
+</head>
+<body>
+  <main class="frame" style="--bg:#efe6da;--panel:rgba(255, 250, 244, 0.86);--ink:#181413;--muted:#6d635c;--line:rgba(55, 34, 18, 0.12);--accent:#bb6127;--hero:linear-gradient(135deg, #ca7231 0%, #efbc82 48%, #f7e9d0 100%);--shadow:0 24px 70px rgba(34, 22, 10, 0.14);">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-copy">
+          <strong>KiddieGo</strong>
+          <span>Kids megastore with broad catalog, collection rails, and family-first trust.</span>
+        </div>
+      </div>
+      <div class="topbar-badges">
+        <span class="badge">store</span><span class="badge">canyon</span>
+      </div>
+    </header>
+    <section class="shell">
+      <section class="hero">
+        <div>
+          <p class="hero-kicker">Launch starter / store</p>
+          <h1 class="hero-title">The kids megastore shell that can launch fast and scale wide.</h1>
+          <p class="hero-copy">Starter commerce page for the KiddieGo 12-collection, 157-product direction documented in the local store specs.</p>
+        </div>
+        <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-label">Collections</span>
+        <strong class="stat-value">12 live-ready</strong>
+      </div>
+    
+      <div class="stat-card">
+        <span class="stat-label">Catalog</span>
+        <strong class="stat-value">157 products</strong>
+      </div>
+    
+      <div class="stat-card">
+        <span class="stat-label">Mode</span>
+        <strong class="stat-value">Shopify launch</strong>
+      </div>
+    </div>
+      </section>
+      <section class="stack">
+        <article class="card">
+          <h2 class="section-title">Launch modules</h2>
+          <p class="card-copy">Reusable modules shaped for this product surface and ready to port into the framework adapters.</p>
+          <div class="feature-list">
+      <article class="feature-item">
+        <strong>Campaign hero</strong>
+        <span>Ready-to-use launch module for the campaign hero layer.</span>
+      </article>
+    
+      <article class="feature-item">
+        <strong>Collection rail</strong>
+        <span>Ready-to-use launch module for the collection rail layer.</span>
+      </article>
+    
+      <article class="feature-item">
+        <strong>Offer spotlight</strong>
+        <span>Ready-to-use launch module for the offer spotlight layer.</span>
+      </article>
+    
+      <article class="feature-item">
+        <strong>Bundle wall</strong>
+        <span>Ready-to-use launch module for the bundle wall layer.</span>
+      </article>
+    </div>
+        </article>
+        <article class="card">
+          <h2 class="section-title">Primary actions</h2>
+          <p class="card-copy">Production-facing calls to action and workflow entry points.</p>
+          <div class="action-list">
+      <article class="action-item">
+        <strong>Launch storefront</strong>
+        <span>Primary action surfaced as a launch-ready CTA block.</span>
+      </article>
+    
+      <article class="action-item">
+        <strong>Load collections</strong>
+        <span>Primary action surfaced as a launch-ready CTA block.</span>
+      </article>
+    
+      <article class="action-item">
+        <strong>Push promo campaign</strong>
+        <span>Primary action surfaced as a launch-ready CTA block.</span>
+      </article>
+    </div>
+        </article>
+      </section>
+    </section>
+    <section class="shell" style="padding-top:0">
+      <section class="card">
+        <h2 class="section-title">Tailored product area</h2>
+        <p class="card-copy">Kids megastore with broad catalog, collection rails, and family-first trust.</p>
+        
+        <div class="custom-area">
+          <article class="custom-box">
+            <strong>Launch Surface</strong>
+            <span>This starter is generated from the local project manifest and can be adapted into Shopify, Next, Electron, or Tauri.</span>
+          </article>
+        </div>
+      
+      </section>
+      <section class="card">
+        <h2 class="section-title">Grounding</h2>
+        <p class="card-copy">This starter was generated from the following local sources and project signals.</p>
+        <div class="pill-row" style="margin-top:18px"><span class="pill">primer.md</span><span class="pill">projects/kiddiego/STORE-SPEC.md</span><span class="pill">projects/kiddiego/STORE-PAGES-CONTENT.md</span></div>
+      </section>
+      <section class="card">
+        <h2 class="section-title">Port path</h2>
+        <p class="card-copy">Use the matching adapters in this kit to move this starter into a production stack without redesigning from scratch.</p>
+        <div class="pill-row" style="margin-top:18px"><span class="pill">Shopify section</span><span class="pill">Next.js landing page</span><span class="pill">Electron promo shell</span></div>
+      </section>
+    </section>
+    <footer class="footer">
+      <span class="footer-note">Plug-and-go output: static starter page + framework adapter path.</span>
+      <span class="footer-note">Project id: kiddiego</span>
+    </footer>
+  </main>
+</body>
+</html>

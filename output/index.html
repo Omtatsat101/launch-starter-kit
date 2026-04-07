@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launch Starter Kit</title>
+  <style>:root {
+  --bg: #efe6da;
+  --panel: rgba(255, 250, 244, 0.86);
+  --ink: #181413;
+  --muted: #6d635c;
+  --line: rgba(55, 34, 18, 0.12);
+  --accent: #bb6127;
+  --hero: linear-gradient(135deg, #ca7231 0%, #efbc82 48%, #f7e9d0 100%);
+  --shadow: 0 24px 70px rgba(34, 22, 10, 0.14);
+  --radius-xl: 34px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-pill: 999px;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.58), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(255,255,255,0.34), transparent 18%),
+    linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 90%, white 10%) 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+body {
+  padding: 20px;
+}
+
+.frame {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 42px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,0.3);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--hero);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.brand-copy strong,
+.hero-title,
+.card-title,
+.section-title {
+  font-family: var(--font-display);
+}
+
+.brand-copy strong {
+  display: block;
+  font-size: 23px;
+  letter-spacing: -0.04em;
+}
+
+.brand-copy span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.topbar-badges,
+.pill-row,
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill,
+.badge,
+.stat-label {
+  font: 700 11px/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge,
+.pill {
+  padding: 9px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.56);
+  color: var(--muted);
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 1.3fr 0.92fr;
+  gap: 22px;
+  padding: 24px;
+}
+
+.hero {
+  min-height: 360px;
+  border-radius: 30px;
+  background: var(--hero);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: -70px;
+  top: -50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.52), transparent 66%);
+}
+
+.hero-kicker {
+  margin: 0 0 12px;
+  position: relative;
+  z-index: 1;
+  font: 700 12px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.74;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(42px, 5.6vw, 82px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.58;
+  opacity: 0.88;
+}
+
+.stat-card {
+  min-width: 140px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.4);
+  border: 1px solid rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 1;
+}
+
+.stat-label {
+  display: block;
+  opacity: 0.66;
+}
+
+.stat-value {
+  display: block;
+  margin-top: 8px;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.stack {
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.54);
+  padding: 22px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 28px;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.card-copy,
+.feature-item span,
+.action-item span,
+.footer-note {
+  color: var(--muted);
+}
+
+.card-copy {
+  margin-top: 10px;
+  line-height: 1.55;
+}
+
+.feature-list,
+.action-list,
+.custom-area {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.feature-item,
+.action-item,
+.custom-box {
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.58);
+  padding: 16px;
+}
+
+.feature-item strong,
+.action-item strong,
+.custom-box strong {
+  display: block;
+  font-size: 16px;
+}
+
+.feature-item span,
+.action-item span,
+.custom-box span {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.custom-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.custom-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.selector-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.selector-pill {
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.72);
+  font: 700 11px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 18px 24px 24px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-note {
+  font: 700 12px/1.45 var(--font-mono);
+}
+
+.gallery {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+}
+
+.gallery-header {
+  margin-bottom: 24px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gallery-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.gallery-card:hover {
+  transform: translateY(-2px);
+}
+
+.gallery-card h2 {
+  margin: 12px 0 0;
+  font: 700 30px/0.96 var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+.gallery-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 980px) {
+  .shell,
+  .custom-grid.two,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    padding: 12px;
+  }
+
+  .frame {
+    border-radius: 26px;
+  }
+}
+</style>
+</head>
+<body>
+  <main class="gallery">
+    <header class="gallery-header">
+      <p class="hero-kicker" style="color:var(--accent)">Organized Launch System</p>
+      <h1 class="hero-title" style="max-width:12ch;color:var(--ink)">Production-leaning starters for the projects already in Organized.</h1>
+      <p class="hero-copy" style="color:var(--muted);max-width:70ch">Static launch surfaces generated from local project docs, ideas, and manifests. Use these directly or port them into the included Shopify, Next.js, Electron, and Tauri adapters.</p>
+    </header>
+    <section class="gallery-grid">
+      
+    <a class="gallery-card" href="./sites/kiddiego.html" style="--bg:#efe6da;--panel:rgba(255, 250, 244, 0.86);--ink:#181413;--muted:#6d635c;--line:rgba(55, 34, 18, 0.12);--accent:#bb6127;--hero:linear-gradient(135deg, #ca7231 0%, #efbc82 48%, #f7e9d0 100%);--shadow:0 24px 70px rgba(34, 22, 10, 0.14);">
+      <span class="badge">store</span>
+      <h2>KiddieGo</h2>
+      <p>Starter commerce page for the KiddieGo 12-collection, 157-product direction documented in the local store specs.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/gogomaya-ai-design-lab.html" style="--bg:#171a1d;--panel:rgba(29, 34, 39, 0.9);--ink:#f3ede6;--muted:#b7b1a9;--line:rgba(255, 255, 255, 0.08);--accent:#e38540;--hero:linear-gradient(135deg, #2c3138 0%, #454d55 30%, #e08b4f 100%);--shadow:0 28px 90px rgba(0, 0, 0, 0.34);">
+      <span class="badge">website</span>
+      <h2>GoGoMaya AI Design Lab</h2>
+      <p>Launch shell for GoGoMaya's AI Design Lab concept with limited releases and community-facing storytelling.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/kiddiesketch-hq.html" style="--bg:#f2eee4;--panel:rgba(255, 255, 251, 0.84);--ink:#211c15;--muted:#6b6257;--line:rgba(41, 29, 14, 0.12);--accent:#7f5530;--hero:linear-gradient(135deg, #b08968 0%, #e6ccb2 46%, #faf0df 100%);--shadow:0 24px 70px rgba(70, 47, 26, 0.12);">
+      <span class="badge">local-app</span>
+      <h2>KiddieSketch HQ</h2>
+      <p>Internal dashboard starter for KiddieSketch operations, aligned to the 90/10 operating policy and approval model.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/riketpatel-portfolio.html" style="--bg:#f2eee4;--panel:rgba(255, 255, 251, 0.84);--ink:#211c15;--muted:#6b6257;--line:rgba(41, 29, 14, 0.12);--accent:#7f5530;--hero:linear-gradient(135deg, #b08968 0%, #e6ccb2 46%, #faf0df 100%);--shadow:0 24px 70px rgba(70, 47, 26, 0.12);">
+      <span class="badge">portfolio</span>
+      <h2>RiketPatel Portfolio</h2>
+      <p>Portfolio starter for the existing Next.js repo and the product portfolio material living in Organized.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/legacy-bridge-business-partners.html" style="--bg:#f2eee4;--panel:rgba(255, 255, 251, 0.84);--ink:#211c15;--muted:#6b6257;--line:rgba(41, 29, 14, 0.12);--accent:#7f5530;--hero:linear-gradient(135deg, #b08968 0%, #e6ccb2 46%, #faf0df 100%);--shadow:0 24px 70px rgba(70, 47, 26, 0.12);">
+      <span class="badge">website</span>
+      <h2>Legacy Bridge Business Partners</h2>
+      <p>Starter website for Legacy Bridge tied to the existing Next.js repo and brokerage practice docs.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/kiddiespeech.html" style="--bg:#dce7ec;--panel:rgba(247, 252, 255, 0.78);--ink:#0f181c;--muted:#50656f;--line:rgba(10, 39, 48, 0.12);--accent:#047e88;--hero:linear-gradient(135deg, #0f5860 0%, #5dc3d0 44%, #ddfcff 100%);--shadow:0 24px 70px rgba(14, 68, 76, 0.14);">
+      <span class="badge">chatbot</span>
+      <h2>KiddieSpeech</h2>
+      <p>Launch starter built from the KiddieSpeech PRD and project overview with parent dashboard + child chat framing.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/kiddiewordle.html" style="--bg:#efe6da;--panel:rgba(255, 250, 244, 0.86);--ink:#181413;--muted:#6d635c;--line:rgba(55, 34, 18, 0.12);--accent:#bb6127;--hero:linear-gradient(135deg, #ca7231 0%, #efbc82 48%, #f7e9d0 100%);--shadow:0 24px 70px rgba(34, 22, 10, 0.14);">
+      <span class="badge">website</span>
+      <h2>KiddieWordle</h2>
+      <p>Interactive starter concept for a kid-safe word game where parents choose word length and language for practice.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/translation-app.html" style="--bg:#dce7ec;--panel:rgba(247, 252, 255, 0.78);--ink:#0f181c;--muted:#50656f;--line:rgba(10, 39, 48, 0.12);--accent:#047e88;--hero:linear-gradient(135deg, #0f5860 0%, #5dc3d0 44%, #ddfcff 100%);--shadow:0 24px 70px rgba(14, 68, 76, 0.14);">
+      <span class="badge">local-app</span>
+      <h2>Translation App</h2>
+      <p>Starter UI for a multilingual translator app with source/target panes, language presets, and phrase memory.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/windows-ai-remote-controller.html" style="--bg:#171a1d;--panel:rgba(29, 34, 39, 0.9);--ink:#f3ede6;--muted:#b7b1a9;--line:rgba(255, 255, 255, 0.08);--accent:#e38540;--hero:linear-gradient(135deg, #2c3138 0%, #454d55 30%, #e08b4f 100%);--shadow:0 28px 90px rgba(0, 0, 0, 0.34);">
+      <span class="badge">desktop</span>
+      <h2>Windows AI Remote Controller</h2>
+      <p>Desktop-style launch starter for a Windows AI controller with panes for commands, devices, and live system state.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/resume-agent-saas.html" style="--bg:#dce7ec;--panel:rgba(247, 252, 255, 0.78);--ink:#0f181c;--muted:#50656f;--line:rgba(10, 39, 48, 0.12);--accent:#047e88;--hero:linear-gradient(135deg, #0f5860 0%, #5dc3d0 44%, #ddfcff 100%);--shadow:0 24px 70px rgba(14, 68, 76, 0.14);">
+      <span class="badge">chatbot</span>
+      <h2>Resume Agent SaaS</h2>
+      <p>Starter page for turning the resume-agent workflow into a SaaS offer with workflow visibility and subscription framing.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/multi-account-hub.html" style="--bg:#dce7ec;--panel:rgba(247, 252, 255, 0.78);--ink:#0f181c;--muted:#50656f;--line:rgba(10, 39, 48, 0.12);--accent:#047e88;--hero:linear-gradient(135deg, #0f5860 0%, #5dc3d0 44%, #ddfcff 100%);--shadow:0 24px 70px rgba(14, 68, 76, 0.14);">
+      <span class="badge">local-app</span>
+      <h2>Multi-Account Hub</h2>
+      <p>Launch starter for the plugin already present in Organized, positioned as a local-first communications utility.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/local-assist-workbench.html" style="--bg:#171a1d;--panel:rgba(29, 34, 39, 0.9);--ink:#f3ede6;--muted:#b7b1a9;--line:rgba(255, 255, 255, 0.08);--accent:#e38540;--hero:linear-gradient(135deg, #2c3138 0%, #454d55 30%, #e08b4f 100%);--shadow:0 28px 90px rgba(0, 0, 0, 0.34);">
+      <span class="badge">desktop</span>
+      <h2>Local Assist Workbench</h2>
+      <p>Desktop starter for the local-assist bridge system already living in the workspace.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/digital-deals.html" style="--bg:#dce7ec;--panel:rgba(247, 252, 255, 0.78);--ink:#0f181c;--muted:#50656f;--line:rgba(10, 39, 48, 0.12);--accent:#047e88;--hero:linear-gradient(135deg, #0f5860 0%, #5dc3d0 44%, #ddfcff 100%);--shadow:0 24px 70px rgba(14, 68, 76, 0.14);">
+      <span class="badge">website</span>
+      <h2>Digital Deals</h2>
+      <p>Starter website for the Digital Deals app traces found in Organized.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/ai-website-cloner.html" style="--bg:#171a1d;--panel:rgba(29, 34, 39, 0.9);--ink:#f3ede6;--muted:#b7b1a9;--line:rgba(255, 255, 255, 0.08);--accent:#e38540;--hero:linear-gradient(135deg, #2c3138 0%, #454d55 30%, #e08b4f 100%);--shadow:0 28px 90px rgba(0, 0, 0, 0.34);">
+      <span class="badge">website</span>
+      <h2>AI Website Cloner</h2>
+      <p>Starter website for the AI Website Cloner project, framed as a design replication and adaptation engine.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/earthmaya.html" style="--bg:#f0f2ed;--panel:rgba(248, 252, 246, 0.86);--ink:#1a2118;--muted:#5a6b56;--line:rgba(30, 50, 25, 0.12);--accent:#6b8f71;--hero:linear-gradient(135deg, #4a7a52 0%, #92b896 44%, #e8f0e4 100%);--shadow:0 24px 70px rgba(34, 60, 38, 0.14);">
+      <span class="badge">website</span>
+      <h2>Earth Maya</h2>
+      <p>Natural family wellness grounded in Ayurvedic tradition. Herbal products, seasonal rituals, and earth-based remedies for families who want to heal with intention.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/vibeflippers.html" style="--bg:#f0f4f8;--panel:rgba(248, 250, 255, 0.86);--ink:#12101c;--muted:#5a5878;--line:rgba(30, 20, 60, 0.12);--accent:#6c3caf;--hero:linear-gradient(135deg, #4a2888 0%, #8b5cd0 44%, #d8ccf0 100%);--shadow:0 24px 70px rgba(44, 24, 80, 0.14);">
+      <span class="badge">website</span>
+      <h2>VibeFlippers</h2>
+      <p>A newsletter and marketplace for AI-generated digital assets — sites, tools, templates, and micro-SaaS. Find deals, get valuations, and flip with confidence.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/flipwala.html" style="--bg:#171a1d;--panel:rgba(29, 34, 39, 0.9);--ink:#f3ede6;--muted:#b7b1a9;--line:rgba(255, 255, 255, 0.08);--accent:#e38540;--hero:linear-gradient(135deg, #2c3138 0%, #454d55 30%, #e08b4f 100%);--shadow:0 28px 90px rgba(0, 0, 0, 0.34);">
+      <span class="badge">website</span>
+      <h2>FlipWala</h2>
+      <p>Empire Flippers-style brokerage for the South Asian diaspora and first-time digital asset buyers. Deal sourcing, due diligence, and buyer matching — powered by AI.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/kidztoystore.html" style="--bg:#faf7f2;--panel:rgba(255, 252, 248, 0.86);--ink:#2a1f18;--muted:#7a6b5c;--line:rgba(50, 30, 15, 0.12);--accent:#C4856A;--hero:linear-gradient(135deg, #B87058 0%, #d4a88a 44%, #e8f0e4 100%);--shadow:0 24px 70px rgba(70, 44, 30, 0.14);">
+      <span class="badge">store</span>
+      <h2>Kidz Toy Store</h2>
+      <p>A curated toy marketplace where every product is chosen for quality, safety, and the kind of play that helps kids grow. Part of the KiddieSketch / Maya experience ecosystem.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/gogoflag.html" style="--bg:#faf7f2;--panel:rgba(255, 252, 248, 0.86);--ink:#2a1f18;--muted:#7a6b5c;--line:rgba(50, 30, 15, 0.12);--accent:#C4856A;--hero:linear-gradient(135deg, #B87058 0%, #d4a88a 44%, #e8f0e4 100%);--shadow:0 24px 70px rgba(70, 44, 30, 0.14);">
+      <span class="badge">website</span>
+      <h2>GoGoFlag</h2>
+      <p>Physical movement games for kids — flag football, adventure challenges, and outdoor play powered by the GoGoMaya universe. Where kid-made sketches become real-world game pieces.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/omvedics.html" style="--bg:#faf5ef;--panel:rgba(255, 252, 247, 0.86);--ink:#201a12;--muted:#7a6b55;--line:rgba(60, 40, 15, 0.12);--accent:#9b6b3b;--hero:linear-gradient(135deg, #8a5a2a 0%, #c9a06a 44%, #f5e8d4 100%);--shadow:0 24px 70px rgba(70, 48, 20, 0.14);">
+      <span class="badge">website</span>
+      <h2>Om Vedics</h2>
+      <p>Authentic Vedic wellness products and knowledge for people who seek balance through tradition. Rooted in the timeless practices of Ayurveda, yoga, and meditation.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/the-aum.html" style="--bg:#faf5ef;--panel:rgba(255, 252, 247, 0.86);--ink:#201a12;--muted:#7a6b55;--line:rgba(60, 40, 15, 0.12);--accent:#9b6b3b;--hero:linear-gradient(135deg, #8a5a2a 0%, #c9a06a 44%, #f5e8d4 100%);--shadow:0 24px 70px rgba(70, 48, 20, 0.14);">
+      <span class="badge">website</span>
+      <h2>The Aum</h2>
+      <p>Spiritual wellness rooted in the primordial syllable. The Aum is a brand for those who seek wholeness through sound, breath, and presence.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/thevedicjeweler.html" style="--bg:#f7f0ea;--panel:rgba(255, 250, 246, 0.86);--ink:#1f1414;--muted:#7a5a5a;--line:rgba(60, 20, 20, 0.12);--accent:#8b3a3a;--hero:linear-gradient(135deg, #6e2a2a 0%, #c27070 44%, #f2dcd0 100%);--shadow:0 24px 70px rgba(70, 26, 26, 0.14);">
+      <span class="badge">website</span>
+      <h2>The Vedic Jeweler</h2>
+      <p>Artisan sacred jewelry inspired by Vedic geometry, planetary alignment, and spiritual intention. Every piece is designed to be worn as a daily practice.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/hariomtatsatjewelry.html" style="--bg:#f7f0ea;--panel:rgba(255, 250, 246, 0.86);--ink:#1f1414;--muted:#7a5a5a;--line:rgba(60, 20, 20, 0.12);--accent:#8b3a3a;--hero:linear-gradient(135deg, #6e2a2a 0%, #c27070 44%, #f2dcd0 100%);--shadow:0 24px 70px rgba(70, 26, 26, 0.14);">
+      <span class="badge">website</span>
+      <h2>Hari Om Tatsat Jewelry</h2>
+      <p>Premium devotional jewelry rooted in the sacred mantra Hari Om Tat Sat — truth, divinity, and beauty expressed through precious metals and sacred stones.</p>
+    </a>
+  
+    <a class="gallery-card" href="./sites/mindvibecodes.html" style="--bg:#f0f4f8;--panel:rgba(248, 250, 255, 0.86);--ink:#12101c;--muted:#5a5878;--line:rgba(30, 20, 60, 0.12);--accent:#6c3caf;--hero:linear-gradient(135deg, #4a2888 0%, #8b5cd0 44%, #d8ccf0 100%);--shadow:0 24px 70px rgba(44, 24, 80, 0.14);">
+      <span class="badge">website</span>
+      <h2>MindVibeCodes</h2>
+      <p>Resources, templates, and tools for AI-assisted development. A hub for the new generation of builders who use AI to code, design, and ship faster than ever.</p>
+    </a>
+  
+    </section>
+  </main>
+</body>
+</html>
