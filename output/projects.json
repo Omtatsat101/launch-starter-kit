@@ -1287,5 +1287,84 @@
     ],
     "brandVision": "MindVibeCodes is the resource hub for developers who build with AI — where vibe coding meets professional craft and shipping culture.",
     "contactEmail": "hello@hariomtatsat.com"
+  },
+  {
+    "id": "kiddiedaily",
+    "name": "KiddieDaily",
+    "slug": "kiddiedaily",
+    "surface": "website",
+    "theme": "play",
+    "specialMode": "waitlist",
+    "isDomainShell": true,
+    "domain": "kiddiedaily.com",
+    "tagline": "Your daily dose of creative play, learning, and parenting wins.",
+    "headline": "One email a day. One creative spark for your kid.",
+    "summary": "A free daily newsletter for parents of kids ages 2-12. Activity ideas, learning prompts, printable worksheets, product picks, and creative challenges — delivered before breakfast.",
+    "offerCopy": "Every morning, one actionable idea to make your kid's day more creative, more active, and more fun.",
+    "metrics": [
+      [
+        "Frequency",
+        "Daily"
+      ],
+      [
+        "Ages",
+        "2-12"
+      ],
+      [
+        "Format",
+        "Newsletter"
+      ]
+    ],
+    "features": [
+      [
+        "Daily Activity",
+        "One creative play idea tailored to your kid's age group — ready in under 5 minutes."
+      ],
+      [
+        "Printable Worksheets",
+        "Free downloadable coloring pages, tracing sheets, and learning activities."
+      ],
+      [
+        "Product Picks",
+        "Handpicked toys, books, and art supplies from the KiddieGo catalog."
+      ],
+      [
+        "Weekly Challenge",
+        "Community-wide creative challenge — share your kid's creation and win prizes."
+      ]
+    ],
+    "actions": [
+      [
+        "Subscribe Free",
+        "Get your first daily creative spark tomorrow morning."
+      ],
+      [
+        "Browse Archive",
+        "Past activities, worksheets, and challenges — all free."
+      ],
+      [
+        "Submit Creation",
+        "Share your kid's art for a chance to be featured."
+      ]
+    ],
+    "sources": [
+      "domain-strategy"
+    ],
+    "topbarBadges": [
+      "Daily Newsletter",
+      "Free"
+    ],
+    "formAction": "#",
+    "waitlistFeatures": [
+      [
+        "5-Minute Activities",
+        "Every idea works with stuff you already have at home."
+      ],
+      [
+        "Connected to Maya",
+        "Activities tie into the KiddieSketch / Maya Meta Experience universe."
+      ]
+    ],
+    "contactEmail": "hello@hariomtatsat.com"
   }
 ]
