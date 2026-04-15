@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoanRatesFinder — Free Loan Comparison & Calculators</title>
+<meta name="description" content="Compare loan rates, calculate payments, and find the best deals on mortgages, auto loans, personal loans, student loans, and business loans. 100% free.">
+<meta name="google-adsense-account" content="ca-pub-7655879237041224">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7655879237041224" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg: #fafaf9;
+  --panel: #ffffff;
+  --ink: #1c1917;
+  --muted: #78716c;
+  --accent: #0d9488;
+  --accent-dark: #0f766e;
+  --accent-light: #ccfbf1;
+  --green: #16a34a;
+  --red: #dc2626;
+  --orange: #ea580c;
+  --line: #e7e5e4;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 40px rgba(0,0,0,0.06);
+  --radius: 12px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.6; }
+
+.header { background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%); color: white; padding: 16px 24px; }
+.header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 22px; font-weight: 700; }
+.logo span { color: #5eead4; }
+.nav { display: flex; gap: 20px; }
+.nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; }
+
+.hero { background: linear-gradient(135deg, #042f2e 0%, #0f766e 50%, #0d9488 100%); color: white; padding: 60px 24px; text-align: center; }
+.hero h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+.hero p { font-size: 18px; opacity: 0.9; max-width: 650px; margin: 0 auto 32px; }
+
+.loan-types { max-width: 1200px; margin: -40px auto 0; padding: 0 24px; position: relative; z-index: 2; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.loan-type { background: white; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow-lg); text-align: center; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; }
+.loan-type:hover, .loan-type.active { border-color: var(--accent); transform: translateY(-3px); }
+.loan-type .lt-icon { font-size: 28px; margin-bottom: 6px; }
+.loan-type .lt-name { font-size: 13px; font-weight: 700; }
+.loan-type .lt-rate { font-size: 20px; font-weight: 800; color: var(--accent); }
+.loan-type .lt-label { font-size: 11px; color: var(--muted); }
+
+.main { max-width: 1200px; margin: 0 auto; padding: 48px 24px; }
+.section-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.section-sub { color: var(--muted); margin-bottom: 24px; }
+
+.calc-section { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
+.calc-panel { background: white; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+.calc-panel h3 { font-size: 18px; margin-bottom: 20px; }
+.fg { margin-bottom: 14px; }
+.fg label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.fg input, .fg select { width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; font-size: 15px; font-family: var(--font); }
+.fg input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+.slider-row { display: flex; align-items: center; gap: 12px; }
+.slider-row input[type="range"] { flex: 1; accent-color: var(--accent); }
+.slider-row .sv { font-size: 15px; font-weight: 700; min-width: 60px; text-align: right; }
+.cbtn { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 8px; }
+.cbtn:hover { background: var(--accent-dark); }
+
+.result-panel { background: #f0fdfa; border: 1px solid #99f6e4; border-radius: var(--radius); padding: 28px; }
+.result-panel h3 { font-size: 18px; margin-bottom: 16px; color: var(--accent-dark); }
+.big-number { font-size: 44px; font-weight: 800; color: var(--accent-dark); margin-bottom: 4px; }
+.big-label { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.breakdown { border-top: 1px solid #99f6e4; padding-top: 16px; }
+.breakdown-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; }
+.breakdown-row .bk-label { color: var(--muted); }
+.breakdown-row .bk-value { font-weight: 600; }
+.amort-chart { width: 100%; height: 200px; margin-top: 16px; background: white; border-radius: 8px; overflow: hidden; position: relative; }
+.amort-bar { position: absolute; bottom: 0; background: linear-gradient(to top, #0d9488, #5eead4); border-radius: 2px 2px 0 0; transition: height 0.3s; }
+
+.tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+.tip-card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+.tip-card h4 { font-size: 15px; margin-bottom: 6px; }
+.tip-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.tip-card .tip-tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
+.tip-card .tip-tag.save { background: #dcfce7; color: #166534; }
+.tip-card .tip-tag.warn { background: #fef3c7; color: #92400e; }
+.tip-card .tip-tag.info { background: #dbeafe; color: #1e40af; }
+
+.footer { background: #1c1917; color: #a8a29e; padding: 40px 24px; text-align: center; font-size: 13px; }
+.footer a { color: #5eead4; text-decoration: none; }
+
+@media (max-width: 768px) {
+  .loan-types { grid-template-columns: repeat(3, 1fr); margin-top: -30px; }
+  .calc-section { grid-template-columns: 1fr; }
+  .tips-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="logo">Loan<span>Rates</span>Finder</div>
+    <nav class="nav">
+      <a href="#calc">Calculator</a>
+      <a href="#tips">Tips</a>
+      <a href="#types">Loan Types</a>
+    </nav>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>Every Loan Rate. One Place. Free.</h1>
+  <p>Calculate payments, compare rates, and understand the true cost of any loan. No signup. No data collection.</p>
+</div>
+
+<!-- AD SLOT: TOP -->
+<div style="max-width:900px;margin:8px auto;text-align:center;min-height:50px;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7655879237041224" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<!-- STORE LINKS BAR -->
+<div style="max-width:900px;margin:8px auto;display:flex;align-items:center;justify-content:center;gap:16px;padding:8px 12px;background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.06);font-size:12px;font-weight:700;flex-wrap:wrap;">
+  <span style="color:#999;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;">Our Tools</span>
+  <a href="https://localratesfinder.com" target="_blank" style="color:#0d9488;text-decoration:none;">📍 LocalRatesFinder</a>
+  <span style="color:#e0e0e0;">|</span>
+  <a href="https://kiddiewordle.com" target="_blank" style="color:#0d9488;text-decoration:none;">🎮 KiddieWordle</a>
+  <span style="color:#e0e0e0;">|</span>
+  <a href="https://kiddiesketch.com" target="_blank" style="color:#0d9488;text-decoration:none;">✏️ KiddieSketch</a>
+  <span style="color:#e0e0e0;">|</span>
+  <a href="https://kiddiego.com" target="_blank" style="color:#0d9488;text-decoration:none;">🌍 KiddieGo</a>
+</div>
+
+<div class="loan-types" id="types">
+  <div class="loan-type active" onclick="setLoan('mortgage')">
+    <div class="lt-icon">🏠</div>
+    <div class="lt-name">Mortgage</div>
+    <div class="lt-rate">6.74%</div>
+    <div class="lt-label">30-yr fixed</div>
+  </div>
+  <div class="loan-type" onclick="setLoan('auto')">
+    <div class="lt-icon">🚗</div>
+    <div class="lt-name">Auto Loan</div>
+    <div class="lt-rate">6.89%</div>
+    <div class="lt-label">60-mo new</div>
+  </div>
+  <div class="loan-type" onclick="setLoan('personal')">
+    <div class="lt-icon">💳</div>
+    <div class="lt-name">Personal</div>
+    <div class="lt-rate">11.5%</div>
+    <div class="lt-label">avg APR</div>
+  </div>
+  <div class="loan-type" onclick="setLoan('student')">
+    <div class="lt-icon">🎓</div>
+    <div class="lt-name">Student</div>
+    <div class="lt-rate">5.50%</div>
+    <div class="lt-label">federal</div>
+  </div>
+  <div class="loan-type" onclick="setLoan('business')">
+    <div class="lt-icon">🏢</div>
+    <div class="lt-name">Business</div>
+    <div class="lt-rate">8.50%</div>
+    <div class="lt-label">SBA 7(a)</div>
+  </div>
+</div>
+
+<div class="main" id="calc">
+  <h2 class="section-title">Universal Loan Calculator</h2>
+  <p class="section-sub">Works for any loan type. Adjust the sliders and see results instantly.</p>
+
+  <div class="calc-section">
+    <div class="calc-panel">
+      <h3>Loan Details</h3>
+      <div class="fg">
+        <label>Loan Amount</label>
+        <div class="slider-row">
+          <input type="range" id="loanAmt" min="1000" max="1000000" step="1000" value="280000" oninput="updateCalc()">
+          <span class="sv" id="loanAmtVal">$280,000</span>
+        </div>
+      </div>
+      <div class="fg">
+        <label>Interest Rate (APR)</label>
+        <div class="slider-row">
+          <input type="range" id="loanRate" min="0.5" max="30" step="0.01" value="6.74" oninput="updateCalc()">
+          <span class="sv" id="loanRateVal">6.74%</span>
+        </div>
+      </div>
+      <div class="fg">
+        <label>Loan Term (Months)</label>
+        <div class="slider-row">
+          <input type="range" id="loanTerm" min="6" max="360" step="6" value="360" oninput="updateCalc()">
+          <span class="sv" id="loanTermVal">30 yrs</span>
+        </div>
+      </div>
+      <div class="fg">
+        <label>Extra Monthly Payment</label>
+        <div class="slider-row">
+          <input type="range" id="loanExtra" min="0" max="2000" step="25" value="0" oninput="updateCalc()">
+          <span class="sv" id="loanExtraVal">$0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-panel">
+      <h3>Your Results</h3>
+      <div class="big-number" id="rPayment">$1,815.72</div>
+      <div class="big-label">Monthly Payment</div>
+      <div class="breakdown">
+        <div class="breakdown-row"><span class="bk-label">Loan Amount</span><span class="bk-value" id="rPrincipal">$280,000</span></div>
+        <div class="breakdown-row"><span class="bk-label">Total Interest</span><span class="bk-value" id="rInterest">$373,659</span></div>
+        <div class="breakdown-row"><span class="bk-label">Total Cost</span><span class="bk-value" id="rTotal">$653,659</span></div>
+        <div class="breakdown-row"><span class="bk-label">Payoff Date</span><span class="bk-value" id="rPayoff">Apr 2056</span></div>
+        <div class="breakdown-row" id="rSavingsRow" style="display:none;color:var(--green)"><span class="bk-label">Interest Saved (extra payment)</span><span class="bk-value" id="rSaved">$0</span></div>
+        <div class="breakdown-row" id="rEarlyRow" style="display:none;color:var(--green)"><span class="bk-label">Early Payoff</span><span class="bk-value" id="rEarly">—</span></div>
+      </div>
+      <div class="amort-chart" id="amortChart"></div>
+    </div>
+  </div>
+
+  <!-- Tips -->
+  <div id="tips">
+    <h2 class="section-title">Save Thousands on Your Next Loan</h2>
+    <p class="section-sub">Practical tips that actually work.</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <span class="tip-tag save">Save $$$</span>
+        <h4>Pay Biweekly Instead of Monthly</h4>
+        <p>By paying half your monthly payment every two weeks, you make 26 half-payments = 13 full payments per year instead of 12. On a $280K mortgage, this saves ~$34,000 in interest and pays it off 4.5 years early.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-tag save">Save $$$</span>
+        <h4>Round Up Your Payment</h4>
+        <p>If your payment is $1,815, pay $1,900. That extra $85/month saves ~$28,000 in interest on a 30-year mortgage and pays it off 3 years early.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-tag info">Know This</span>
+        <h4>Check Your Credit Before Applying</h4>
+        <p>A 50-point credit score improvement (e.g., 700 → 750) can save 0.5-1% on your rate. On a $300K mortgage, that's $100-200/month or $36K-72K over the life of the loan.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-tag warn">Watch Out</span>
+        <h4>Avoid 72+ Month Auto Loans</h4>
+        <p>Longer terms = lower payments but you'll be "underwater" (owe more than the car is worth) for years. Stick to 48-60 months max.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-tag save">Save $$$</span>
+        <h4>Credit Unions Beat Banks</h4>
+        <p>Credit unions offer 0.5-2% lower rates on average for auto loans, personal loans, and mortgages. You can join most credit unions based on where you live or work.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-tag info">Know This</span>
+        <h4>Always Get 3+ Quotes</h4>
+        <p>Lenders compete for your business. Getting 3 quotes takes 30 minutes and typically saves $1,500+ over the life of a loan. Multiple credit pulls within 14 days count as one.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-tag warn">Watch Out</span>
+        <h4>Prepayment Penalties</h4>
+        <p>Some loans charge fees for paying early. Always ask about prepayment penalties before signing. Federal student loans and VA mortgages never have them.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-tag save">Save $$$</span>
+        <h4>Refinance When Rates Drop 0.75%+</h4>
+        <p>If rates drop 0.75-1% below your current rate, refinancing usually makes sense. Calculate the break-even point: closing costs ÷ monthly savings = months to recoup.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-tag info">Know This</span>
+        <h4>APR vs Interest Rate</h4>
+        <p>APR includes fees and points — it's the TRUE cost. Two loans with the same rate can have very different APRs. Always compare APR, not just the rate.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AD SLOT: BOTTOM -->
+<div style="max-width:900px;margin:8px auto;text-align:center;min-height:50px;">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7655879237041224" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="footer">
+  <p><strong>LoanRatesFinder.com</strong> — Free loan calculators for everyone. No signup. No tracking. Your data stays on your device.</p>
+  <p style="margin-top:8px;">A <a href="https://hariomtatsatinvestments.com">Hariom Tatsat Investments</a> project | <a href="https://localratesfinder.com">LocalRatesFinder</a> | <a href="https://kiddiesketch.com">KiddieSketch</a> | <a href="https://kiddiewordle.com">KiddieWordle</a></p>
+</div>
+
+<script>
+function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+function updateCalc() {
+  const P = +document.getElementById('loanAmt').value;
+  const r = +document.getElementById('loanRate').value / 100 / 12;
+  const n = +document.getElementById('loanTerm').value;
+  const extra = +document.getElementById('loanExtra').value;
+
+  // Update display values
+  document.getElementById('loanAmtVal').textContent = fmt(P);
+  document.getElementById('loanRateVal').textContent = (+document.getElementById('loanRate').value).toFixed(2) + '%';
+  const years = n / 12;
+  document.getElementById('loanTermVal').textContent = years >= 1 ? years.toFixed(years % 1 ? 1 : 0) + ' yrs' : n + ' mo';
+  document.getElementById('loanExtraVal').textContent = fmt(extra);
+
+  // Calculate base payment
+  const payment = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  const baseTotalPaid = payment * n;
+  const baseInterest = baseTotalPaid - P;
+
+  // Calculate with extra payments
+  let balance = P, months = 0, totalInterest = 0;
+  while (balance > 0 && months < n) {
+    const interest = balance * r;
+    totalInterest += interest;
+    const totalPay = Math.min(payment + extra, balance + interest);
+    balance = balance + interest - totalPay;
+    months++;
+  }
+  const totalPaid = P + totalInterest;
+
+  // Payoff date
+  const payoffDate = new Date();
+  payoffDate.setMonth(payoffDate.getMonth() + months);
+  const payoffStr = payoffDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+
+  // Update results
+  document.getElementById('rPayment').textContent = '$' + payment.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  document.getElementById('rPrincipal').textContent = fmt(P);
+  document.getElementById('rInterest').textContent = fmt(totalInterest);
+  document.getElementById('rTotal').textContent = fmt(totalPaid);
+  document.getElementById('rPayoff').textContent = payoffStr;
+
+  // Extra payment savings
+  if (extra > 0) {
+    const saved = baseInterest - totalInterest;
+    const monthsSaved = n - months;
+    document.getElementById('rSaved').textContent = fmt(saved);
+    document.getElementById('rEarly').textContent = Math.floor(monthsSaved / 12) + ' yrs ' + (monthsSaved % 12) + ' mo earlier';
+    document.getElementById('rSavingsRow').style.display = 'flex';
+    document.getElementById('rEarlyRow').style.display = 'flex';
+  } else {
+    document.getElementById('rSavingsRow').style.display = 'none';
+    document.getElementById('rEarlyRow').style.display = 'none';
+  }
+
+  // Mini amortization chart
+  drawAmort(P, r, n, payment, extra);
+}
+
+function drawAmort(P, r, n, payment, extra) {
+  const chart = document.getElementById('amortChart');
+  chart.innerHTML = '';
+  const bars = Math.min(n, 60);
+  const step = Math.max(1, Math.floor(n / bars));
+  let balance = P;
+  const balances = [];
+  for (let i = 0; i < n; i++) {
+    const interest = balance * r;
+    balance = Math.max(0, balance + interest - payment - extra);
+    if (i % step === 0) balances.push(balance);
+  }
+  const maxBal = P;
+  const barWidth = (chart.offsetWidth || 400) / balances.length - 1;
+  balances.forEach((b, i) => {
+    const bar = document.createElement('div');
+    bar.className = 'amort-bar';
+    bar.style.left = (i * (barWidth + 1)) + 'px';
+    bar.style.width = barWidth + 'px';
+    bar.style.height = ((b / maxBal) * 180) + 'px';
+    chart.appendChild(bar);
+  });
+}
+
+function setLoan(type) {
+  document.querySelectorAll('.loan-type').forEach(el => el.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  const presets = {
+    mortgage: { amt: 280000, rate: 6.74, term: 360 },
+    auto: { amt: 30000, rate: 6.89, term: 60 },
+    personal: { amt: 15000, rate: 11.5, term: 48 },
+    student: { amt: 35000, rate: 5.50, term: 120 },
+    business: { amt: 150000, rate: 8.50, term: 120 },
+  };
+  const p = presets[type];
+  document.getElementById('loanAmt').value = p.amt;
+  document.getElementById('loanRate').value = p.rate;
+  document.getElementById('loanTerm').value = p.term;
+  document.getElementById('loanExtra').value = 0;
+  updateCalc();
+}
+
+// Initialize
+updateCalc();
+
+// ---- AI Loan Advisor ----
+const loanKB = {
+  'mortgage': 'Mortgage rates in 2026 average ~6.74% (30-yr fixed). Shop at least 3 lenders — credit unions often beat big banks by 0.25-0.5%. Each 0.25% rate difference on a $300K loan = ~$50/month = $18,000 over 30 years. Get pre-approved before house hunting.',
+  'auto loan': 'Best auto loan strategy: get pre-approved from your credit union BEFORE going to the dealership. Dealer financing is marked up (that\'s their profit). Credit unions offer 5.5-6.5% for new cars in 2026. Don\'t extend to 72-84 months just to lower payment — you\'ll be underwater on the car.',
+  'personal loan': 'Personal loans run 10-20%+ at banks. Credit unions are usually 2-5% cheaper. If you have home equity, a HELOC at 7-8% beats a personal loan at 15%. If you have good credit, 0% intro APR credit cards can be cheaper for short-term needs under 18 months.',
+  'student loan': 'Federal student loans (4.99-7.54% in 2026) are almost always better than private. Income-driven repayment, PSLF, and deferment options only exist on federal loans. Don\'t refinance federal loans to private unless you\'re certain you won\'t need those protections.',
+  'extra payment': 'Extra principal payments have the biggest impact early in the loan when interest is highest. On a $300K 30-yr mortgage at 6.74%, an extra $200/month cuts 6 years off the loan and saves $60,000+ in interest. Use the calculator above to see your scenario.',
+  'amortization': 'Amortization is how your payment splits between principal and interest. Early payments are 80%+ interest. Year 1 on a $300K mortgage: you pay ~$24K total, but only ~$5K reduces your balance. By year 25, the split flips. This is why extra payments early are so powerful.',
+  'refinance': 'Break-even rule for refinancing: divide closing costs by monthly savings. If you save $200/month and closing costs are $4,000 → 20-month break-even. Only refinance if you\'ll stay long enough. In 2026, rates are 6.5-7% — refinancing only makes sense if your current rate is above 7.5%.',
+  'apr': 'APR (Annual Percentage Rate) is the true cost of a loan — it includes the interest rate PLUS origination fees, points, and other charges rolled into a single annual rate. Always compare APRs across lenders, not just interest rates. A lower rate with high fees can have a higher APR.',
+  'payoff': 'Debt avalanche: pay extra toward highest-rate debt first (saves most money). Debt snowball: pay extra toward smallest balance first (builds momentum). Avalanche wins mathematically; snowball wins psychologically. Either beats minimum payments by a huge margin.',
+};
+
+function toggleChat() {
+  const win = document.getElementById('chatWindow');
+  win.classList.toggle('open');
+  document.querySelector('.chat-badge').style.display = 'none';
+}
+function quickSend(msg) {
+  document.getElementById('chatInput').value = msg;
+  sendLoanChat();
+  document.getElementById('quickBtns').style.display = 'none';
+}
+function sendLoanChat() {
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  addLoanMsg(msg, 'user');
+  setTimeout(() => addLoanMsg(getLoanReply(msg.toLowerCase()), 'agent'), 600);
+}
+function addLoanMsg(text, who) {
+  const msgs = document.getElementById('chatMessages');
+  const now = new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+  const div = document.createElement('div');
+  div.className = `msg msg-${who}`;
+  div.innerHTML = `<div class="msg-bubble">${text}</div><div class="msg-time">${now}</div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+function getLoanReply(msg) {
+  for (const [key, val] of Object.entries(loanKB)) {
+    if (msg.includes(key.split(' ')[0]) || msg.includes(key)) return val;
+  }
+  if (msg.includes('hi') || msg.includes('hello'))
+    return 'Hi! I can help with mortgages, auto loans, personal loans, extra payments, amortization, and refinancing. What\'s your situation?';
+  if (msg.includes('best') || msg.includes('lowest'))
+    return 'For the lowest loan rates: (1) Shop credit unions first — they beat banks by 0.25-2%. (2) Improve credit score — 760+ gets the best rates. (3) Shorten the term — 15-yr mortgages are ~1% cheaper than 30-yr. (4) Put more down — lower LTV = lower rate.';
+  return 'I can help with: mortgage rates, auto loans, personal loans, extra payment impact, amortization, refinancing, and APR explained. Which topic helps most?';
+}
+</script>
+
+<!-- AI Loan Advisor Widget -->
+<style>
+.chat-fab { position: fixed; bottom: 24px; right: 24px; z-index: 1000; }
+.chat-btn { width: 56px; height: 56px; background: linear-gradient(135deg, #065f46, #059669); border-radius: 50%; border: none; color: white; font-size: 22px; cursor: pointer; box-shadow: 0 6px 20px rgba(5,150,105,0.4); transition: transform 0.2s; display: flex; align-items: center; justify-content: center; }
+.chat-btn:hover { transform: scale(1.08); }
+.chat-badge { position: absolute; top: -2px; right: -2px; width: 18px; height: 18px; background: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 700; border: 2px solid white; }
+.chat-window { position: fixed; bottom: 94px; right: 24px; width: 360px; max-height: 480px; background: white; border-radius: 16px; box-shadow: 0 16px 48px rgba(0,0,0,0.14); z-index: 999; display: none; flex-direction: column; overflow: hidden; border: 1px solid #e5e7eb; }
+.chat-window.open { display: flex; }
+.chat-header { background: linear-gradient(135deg, #065f46, #059669); color: white; padding: 14px 18px; display: flex; align-items: center; gap: 10px; }
+.chat-avatar { width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.chat-header-info strong { display: block; font-size: 14px; }
+.chat-header-info span { font-size: 11px; opacity: 0.75; }
+.chat-close { margin-left: auto; background: none; border: none; color: white; font-size: 18px; cursor: pointer; opacity: 0.7; }
+.chat-close:hover { opacity: 1; }
+.chat-messages { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; min-height: 160px; }
+.msg { max-width: 88%; }
+.msg-agent { align-self: flex-start; }
+.msg-user { align-self: flex-end; }
+.msg-bubble { padding: 10px 13px; border-radius: 12px; font-size: 13px; line-height: 1.5; }
+.msg-agent .msg-bubble { background: #d1fae5; color: #1a1d23; border-bottom-left-radius: 3px; }
+.msg-user .msg-bubble { background: #059669; color: white; border-bottom-right-radius: 3px; }
+.msg-time { font-size: 10px; color: #6b7280; margin-top: 2px; }
+.msg-user .msg-time { text-align: right; }
+.chat-quick { padding: 7px 12px; border-top: 1px solid #e5e7eb; display: flex; gap: 5px; flex-wrap: wrap; }
+.quick-btn { padding: 4px 9px; background: #d1fae5; color: #065f46; border: none; border-radius: 20px; font-size: 11px; cursor: pointer; white-space: nowrap; }
+.quick-btn:hover { background: #059669; color: white; }
+.chat-input-row { display: flex; gap: 7px; padding: 10px 12px; border-top: 1px solid #e5e7eb; }
+.chat-input { flex: 1; padding: 9px 13px; border: 1px solid #e5e7eb; border-radius: 18px; font-size: 13px; }
+.chat-input:focus { outline: none; border-color: #059669; }
+.chat-send { width: 34px; height: 34px; background: #059669; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.chat-send:hover { background: #065f46; }
+</style>
+<div class="chat-fab">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-avatar">🏦</div>
+      <div class="chat-header-info"><strong>Loan Advisor</strong><span>Free loan guidance</span></div>
+      <button class="chat-close" onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg msg-agent"><div class="msg-bubble">Hi! I can help you understand loans, rates, extra payments, and payoff strategies. What are you working on?</div><div class="msg-time">Now</div></div>
+    </div>
+    <div class="chat-quick" id="quickBtns">
+      <button class="quick-btn" onclick="quickSend('Best mortgage rate?')">Mortgage rates?</button>
+      <button class="quick-btn" onclick="quickSend('Auto loan tips')">Auto loan?</button>
+      <button class="quick-btn" onclick="quickSend('Extra payment impact')">Extra payments?</button>
+      <button class="quick-btn" onclick="quickSend('Should I refinance?')">Refinance?</button>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Ask about loans, rates, payoff..." onkeydown="if(event.key==='Enter')sendLoanChat()">
+      <button class="chat-send" onclick="sendLoanChat()">↑</button>
+    </div>
+  </div>
+  <button class="chat-btn" onclick="toggleChat()" title="Loan Advisor">🏦<div class="chat-badge">1</div></button>
+</div>
+<script>try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){} try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}</script>
+</body>
+</html>
