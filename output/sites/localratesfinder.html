@@ -9,6 +9,10 @@
 <meta property="og:title" content="LocalRatesFinder — Compare Local Rates Free">
 <meta property="og:description" content="Find the best mortgage, savings, auto loan, and CD rates from banks and credit unions near you.">
 <meta name="google-adsense-account" content="ca-pub-7655879237041224">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="robots" content="index, follow">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7655879237041224" crossorigin="anonymous"></script>
 <style>
 :root {
@@ -533,9 +537,28 @@ body { font-family: var(--font); background: var(--bg); color: var(--ink); line-
       <a href="#compare">Compare All</a>
     </div>
   </div>
+  </div>
+
+  <!-- TRANSLATE WIDGET -->
+  <div style="display:flex;justify-content:flex-end;padding:8px 0;">
+    <div id="google_translate_element"></div>
+  </div>
+
+  <!-- EMAIL SUBSCRIBER -->
+  <div style="padding:24px;background:linear-gradient(135deg,#2563eb,#1d4ed8);border-radius:16px;text-align:center;color:white;margin-top:16px;">
+    <h3 style="margin:0 0 6px;font-size:18px;font-weight:800;">Get Rate Alerts</h3>
+    <p style="margin:0 0 12px;font-size:13px;opacity:0.9;">Weekly local rate updates. No spam. Unsubscribe anytime.</p>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:flex;gap:8px;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
+      <input type="email" name="email" placeholder="your@email.com" required style="flex:1;min-width:200px;padding:10px 14px;border:none;border-radius:10px;font-size:14px;font-family:inherit;">
+      <input type="hidden" name="_subject" value="New subscriber — LocalRatesFinder">
+      <button type="submit" style="padding:10px 20px;border:none;border-radius:10px;background:#fff;color:#2563eb;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;">Subscribe</button>
+    </form>
+  </div>
+
   <div class="footer-bottom">
-    <span>&copy; 2026 LocalRatesFinder.com — A Hariom Tatsat Investments project</span>
+    <span>&copy; 2026 LocalRatesFinder.com</span>
     <span>Rates are estimates. Always verify with your financial institution.</span>
+    <span style="font-size:10px;opacity:0.6;">Property of <a href="https://legacybridgealliancegroup.com" style="color:inherit;">Legacy Bridge Alliance Group</a>. All rights reserved.</span>
   </div>
 </div>
 
@@ -769,5 +792,7 @@ function getRateReply(msg) {
   </button>
 </div>
 <script>try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){} try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}</script>
+<script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false,layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
